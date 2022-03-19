@@ -1,0 +1,9 @@
+- included_paths:
+    - '**/*.proto'
+  disabled_rules:
+    - 'core::0192::has-comments'
+
+- included_paths:
+    - 'dependencies/gogoproto/gogo.proto'
+  disabled_rules:
+    - 'all'

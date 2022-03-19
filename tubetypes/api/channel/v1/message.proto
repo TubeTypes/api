@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package tubetypes.api.channel.v1;
+
+option go_package = "go.tubetypes.com/api/channel/v1;channel";
+option java_package = "com.tubetypes.api.channel.v1";
+option java_multiple_files = true;
+option java_outer_classname = "MessageProto";
+option ruby_package = "TubeTypes::Api::Channel::V1";
+option csharp_namespace = "TubeTypes.Api.Channel.V1";
+
+import "google/protobuf/duration.proto";
+import "google/protobuf/timestamp.proto";
+
+import "dependencies/gogoproto/gogo.proto";
+
+import "tubetypes/api/common/v1/message.proto";
+import "tubetypes/api/failure/v1/message.proto";
