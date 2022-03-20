@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package tubetypes.api.channelservice.v1;
+
+import "tubetypes/api/channel/v1/message.proto";
+
+message CreateChannelRequest {
+    tubetypes.api.channel.v1.Channel channel = 1;
+}
+
+message CreateChannelResponse {
+}
+
+message ListChannelsRequest {
+    int32 page_size = 1;
+    string page_token = 2;
+}
+
+message ListChannelsResponse {
+    repeated DescribeChannelResponse channels = 1;
+    string page_token = 2;
+}
+
+message DescribeChannelRequest {
+    string channel_id = 1;
+}
+
+message DescribeChannelResponse {
+    tubetypes.api.channel.v1.Channel channel_info = 1;
+}

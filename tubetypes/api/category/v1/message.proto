@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package tubetypes.api.category.v1;
+
+message CategoryInfo {
+    string id = 1;    
+    string name = 2;
+    string display_name = 3;
+    string path = 4;
+}

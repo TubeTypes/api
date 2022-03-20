@@ -1,9 +1,11 @@
-version: v1beta1
-build:
-  roots:
-    - .
+version: v1
 lint:
   ignore:
     - dependencies
   use:
     - DEFAULT
+breaking:
+  use:
+    - FILE
+deps:
+  - buf.build/googleapis/googleapis

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package tubetypes.api.channelservice.v1;
+
+import "tubetypes/api/channelservice/v1/request_response.proto";
+
+// ChannelService API defines how TubeTypes interacts with the channels
+service ChannelService {
+
+    rpc CreateChannel (CreateChannelRequest) returns (CreateChannelResponse) {
+    }
+
+    rpc DescribeChannel (DescribeChannelRequest) returns (DescribeChannelResponse) {
+    }
+
+    rpc ListChannels (ListChannelsRequest) returns (ListChannelsResponse) {
+    }
+
+}

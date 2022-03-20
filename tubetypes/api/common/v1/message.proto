@@ -1,10 +1,3 @@
 syntax = "proto3";
 
 package tubetypes.api.common.v1;
-
-option go_package = "go.tubetypes.com/api/common/v1;common";
-option java_package = "com.tubetypes.api.common.v1";
-option java_multiple_files = true;
-option java_outer_classname = "MessageProto";
-option ruby_package = "TubeTypes::Api::Common::V1";
-option csharp_namespace = "TubeTypes.Api.Common.V1";
