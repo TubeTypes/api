@@ -9,7 +9,6 @@ message CreateChannelRequest {
 }
 
 message CreateChannelResponse {
-    tubetypes.api.channel.v1.Channel channel = 1;
 }
 
 message ListChannelsRequest {

@@ -9,7 +9,6 @@ message CreateCategoryRequest {
 }
 
 message CreateCategoryResponse {
-    tubetypes.api.category.v1.Category category = 1;
 }
 
 message ListCategoriesRequest {
