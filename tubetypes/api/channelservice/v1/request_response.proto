@@ -9,6 +9,7 @@ message CreateChannelRequest {
 }
 
 message CreateChannelResponse {
+    tubetypes.api.channel.v1.Channel channel = 1;
 }
 
 message ListChannelsRequest {
@@ -26,5 +27,5 @@ message DescribeChannelRequest {
 }
 
 message DescribeChannelResponse {
-    tubetypes.api.channel.v1.Channel channel_info = 1;
+    tubetypes.api.channel.v1.Channel channel = 1;
 }

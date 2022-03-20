@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package tubetypes.api.categoryservice.v1;
+
+import "tubetypes/api/categoryservice/v1/request_response.proto";
+
+// CategoryService API defines how TubeTypes interacts with the categories
+service CategoryService {
+
+    rpc CreateCategory(CreateCategoryRequest) returns (CreateCategoryResponse) {
+    }
+
+    rpc DescribeCategory(DescribeCategoryRequest) returns (DescribeCategoryResponse) {
+    }
+
+    rpc ListCategories (ListCategoriesRequest) returns (ListCategoriesResponse) {
+    }
+
+}
