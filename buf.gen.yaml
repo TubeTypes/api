@@ -10,16 +10,16 @@ managed:
       - buf.build/googleapis/googleapis
 plugins:
   - name: go
-    out: .gen/go
+    out: gen/go
     opt: paths=source_relative
   - name: js
-    out: .gen/nodejs
+    out: gen/nodejs
     opt: import_style=commonjs,binary
   - name: python
-    out: .gen/python
+    out: gen/python
     opt: ""
   - name: go-grpc
-    out: .gen/go
+    out: gen/go
     opt:
       - paths=source_relative
       - require_unimplemented_servers=false

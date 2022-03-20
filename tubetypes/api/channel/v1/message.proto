@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package tubetypes.api.channel.v1;
 
+import "tubetypes/api/category/v1/message.proto";
+
 import "google/protobuf/timestamp.proto";
 
 import "dependencies/gogoproto/gogo.proto";
@@ -12,12 +14,18 @@ message Channel {
     string title = 3;
     string category_id = 4;
     ChannelThumbnails thumbnails = 5;
+    optional tubetypes.api.category.v1.Category category = 6;
+    optional ChannelPreviews previews = 7;
 }
 
 message ChannelThumbnails {
     string standard = 1;
     string medium = 2;
     string high = 3;
+}
+
+message ChannelPreviews {
+    repeated ChannelVideo videos = 1;
 }
 
 message ChannelVideo {
