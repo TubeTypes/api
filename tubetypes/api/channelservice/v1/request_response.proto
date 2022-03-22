@@ -18,8 +18,8 @@ message ListChannelsRequest {
 }
 
 message ListChannelsResponse {
+    string next_page_token = 2;
     repeated DescribeChannelResponse channels = 1;
-    string page_token = 2;
 }
 
 message DescribeChannelRequest {
