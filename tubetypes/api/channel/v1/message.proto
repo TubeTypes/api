@@ -12,10 +12,10 @@ message Channel {
     string id = 1;
     string youtube_id = 2;
     string title = 3;
-    string category_id = 4;
-    string thumbnail_standard = 5;
-    string thumbnail_medium = 6;
-    string thumbnail_high = 7;
+    string thumbnail_standard = 4;
+    string thumbnail_medium = 5;
+    string thumbnail_high = 6;
+    optional string category_id = 7;
 }
 
 message ChannelPreviews {
