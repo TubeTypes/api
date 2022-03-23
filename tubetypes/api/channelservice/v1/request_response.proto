@@ -14,7 +14,6 @@ message CreateChannelResponse {
 message ListChannelsRequest {
     int32 page_size = 1;
     string page_token = 2;
-    optional string category_id = 3;
 }
 
 message ListChannelsResponse {
@@ -28,4 +27,15 @@ message DescribeChannelRequest {
 
 message DescribeChannelResponse {
     tubetypes.api.channel.v1.Channel channel = 1;
+}
+
+message ListChannelsByCategoryRequest {
+    int32 page_size = 1;
+    string page_token = 2;
+    optional string category_id = 3;
+}
+
+message ListChannelsByCategoryResponse {
+    string next_page_token = 2;
+    repeated DescribeChannelResponse channels = 1;
 }

@@ -17,8 +17,8 @@ message ListCategoriesRequest {
 }
 
 message ListCategoriesResponse {
+    string next_page_token = 2;
     repeated DescribeCategoryResponse categories = 1;
-    string page_token = 2;
 }
 
 message DescribeCategoryRequest {

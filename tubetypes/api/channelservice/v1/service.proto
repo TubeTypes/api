@@ -16,4 +16,7 @@ service ChannelService {
     rpc ListChannels (ListChannelsRequest) returns (ListChannelsResponse) {
     }
 
+    rpc ListChannelsByCategory (ListChannelsByCategoryRequest) returns (ListChannelsByCategoryResponse) {
+    }
+
 }
