@@ -16,7 +16,7 @@ message Channel {
     string thumbnail_medium = 5;
     string thumbnail_high = 6;
     int64 total_views = 7;
-    int64 subscriber_count = 8;
+    optional int64 subscriber_count = 8;
     int32 video_count = 9;
     optional string category_id = 10;
 }
