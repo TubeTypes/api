@@ -17,8 +17,8 @@ message ListChannelsRequest {
 }
 
 message ListChannelsResponse {
-    string next_page_token = 2;
-    repeated DescribeChannelResponse channels = 1;
+    string next_page_token = 1;
+    repeated DescribeChannelResponse channels = 2;
 }
 
 message DescribeChannelRequest {
@@ -38,4 +38,12 @@ message ListChannelsByCategoryRequest {
 message ListChannelsByCategoryResponse {
     string next_page_token = 2;
     repeated DescribeChannelResponse channels = 1;
+}
+
+message GetChannelPreviewsRequest {
+    string channel_id = 1;
+}
+
+message GetChannelPreviewsResponse {
+    tubetypes.api.channel.v1.ChannelPreviews previews = 1;
 }
