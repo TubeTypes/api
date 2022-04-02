@@ -31,3 +31,8 @@ message ChannelVideo {
     int64 views = 3;
     google.protobuf.Timestamp publish_time = 4 [(gogoproto.stdtime) = true];
 }
+
+message Categorisation {
+    Channel channel = 1;
+    ChannelPreviews previews = 2;
+}
