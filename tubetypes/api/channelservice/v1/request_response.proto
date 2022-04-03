@@ -29,6 +29,14 @@ message DescribeChannelResponse {
     tubetypes.api.channel.v1.Channel channel = 1;
 }
 
+message DescribeChannelByYoutubeIDRequest {
+    string youtube_id = 1;
+}
+
+message DescribeChannelByYoutubeIDResponse {
+    tubetypes.api.channel.v1.Channel channel = 1;
+}
+
 message ListChannelsByCategoryRequest {
     int32 page_size = 1;
     string page_token = 2;
