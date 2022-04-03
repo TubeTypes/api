@@ -28,9 +28,10 @@ message ChannelPreviews {
 message ChannelVideo {
     string id = 1;
     string channel_id = 2;
-    string title = 3;
-    int64 views = 4;
-    google.protobuf.Timestamp publish_time = 5 [(gogoproto.stdtime) = true];
+    string youtube_id = 3;
+    string title = 4;
+    int64 views = 5;
+    google.protobuf.Timestamp publish_time = 6 [(gogoproto.stdtime) = true];
 }
 
 message Categorisation {
