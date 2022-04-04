@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package tubetypes.api.categorisation.v1;
+
+import "tubetypes/api/channel/v1/message.proto";
+
+message Categorisation {
+    tubetypes.api.channel.v1.Channel channel = 1;
+    tubetypes.api.channel.v1.ChannelPreviews previews = 2;
+}

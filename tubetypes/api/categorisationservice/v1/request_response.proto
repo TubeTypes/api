@@ -2,14 +2,14 @@ syntax = "proto3";
 
 package tubetypes.api.categorisationservice.v1;
 
-import "tubetypes/api/channel/v1/message.proto";
+import "tubetypes/api/categorisation/v1/message.proto";
 
-message ListRandomChannelsRequest {
+message ListRandomCategorisationsRequest {
     int32 page_size = 1;
     string page_token = 2;
 }
 
-message ListRandomChannelsResponse {
+message ListRandomCategorisationsResponse {
     string next_page_token = 1;
-    repeated tubetypes.api.channel.v1.Channel channels = 2;
+    repeated tubetypes.api.categorisation.v1.Categorisation categorisations = 2;
 }

@@ -7,6 +7,6 @@ import "tubetypes/api/categorisationservice/v1/request_response.proto";
 // CategorisationService API defines how TubeTypes requests categorisation
 // information.
 service CategorisationService {
-    rpc ListRandomChannels(ListRandomChannelsRequest) returns (ListRandomChannelsResponse) {
+    rpc ListRandomCategorisations(ListRandomCategorisationsRequest) returns (ListRandomCategorisationsResponse) {
     }
 }
