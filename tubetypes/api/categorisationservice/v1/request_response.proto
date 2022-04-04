@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package tubetypes.api.categorisationservice.v1;
+
+import "tubetypes/api/channel/v1/message.proto";
+
+message ListRandomChannelsRequest {
+    int32 page_size = 1;
+    string page_token = 2;
+}
+
+message ListRandomChannelsResponse {
+    string next_page_token = 1;
+    repeated tubetypes.api.channel.v1.Channel channels = 2;
+}
