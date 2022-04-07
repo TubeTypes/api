@@ -6,8 +6,11 @@ import "tubetypes/api/category/v1/message.proto";
 
 import "google/protobuf/timestamp.proto";
 
+import "tubetypes/api/category/v1/message.proto";
+
 message Channel {
-    string id = 1;
+    option (gorm.opts).ormable = true;
+    uint64 id = 1;
     string youtube_id = 2;
     string title = 3;
     string thumbnail_standard = 4;
@@ -16,7 +19,7 @@ message Channel {
     int64 total_views = 7;
     optional int64 subscriber_count = 8;
     int32 video_count = 9;
-    optional string category_id = 10;
+    tubetypes.api.category.v1.Category category = 10 [(gorm.field).has_one = {}];
 }
 
 message ChannelPreviews {
@@ -24,7 +27,8 @@ message ChannelPreviews {
 }
 
 message ChannelVideo {
-    string id = 1;
+    option (gorm.opts).ormable = true;
+    uint64 id = 1;
     string channel_id = 2;
     string youtube_id = 3;
     string title = 4;
