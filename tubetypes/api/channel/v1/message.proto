@@ -5,8 +5,7 @@ package tubetypes.api.channel.v1;
 import "tubetypes/api/category/v1/message.proto";
 
 import "google/protobuf/timestamp.proto";
-
-import "tubetypes/api/category/v1/message.proto";
+import "options/gorm.proto";
 
 message Channel {
     option (gorm.opts).ormable = true;

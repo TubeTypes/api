@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "options/gorm.proto";
+
 package tubetypes.api.category.v1;
 
 message Category {
