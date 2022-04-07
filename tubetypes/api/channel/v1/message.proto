@@ -10,7 +10,7 @@ import "dependencies/gorm/options.proto";
 
 message Channel {
     option (gorm.opts).ormable = true;
-    int32 id = 1 [(gorm.field).tag = {type: "integer" primary_key: true}];
+    uint64 id = 1 [(gorm.field).tag = {type: "integer" primary_key: true}];
     string youtube_id = 2;
     string title = 3;
     string thumbnail_standard = 4;
@@ -25,7 +25,7 @@ message Channel {
 
 message ChannelVideo {
     option (gorm.opts).ormable = true;
-    int32 id = 1 [(gorm.field).tag = {type: "integer" primary_key: true}];
+    uint64 id = 1 [(gorm.field).tag = {type: "integer" primary_key: true}];
     string youtube_id = 2;
     string title = 3;
     int64 views = 4;

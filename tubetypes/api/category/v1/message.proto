@@ -6,7 +6,7 @@ import "dependencies/gorm/options.proto";
 
 message Category {
     option (gorm.opts).ormable = true;
-    int32 id = 1 [(gorm.field).tag = {type: "integer" primary_key: true}];
+    uint64 id = 1 [(gorm.field).tag = {type: "integer" primary_key: true}];
     string name = 2;
     string display_name = 3;
     string path = 4;
