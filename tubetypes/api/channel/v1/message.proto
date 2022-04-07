@@ -5,7 +5,7 @@ package tubetypes.api.channel.v1;
 import "tubetypes/api/category/v1/message.proto";
 
 import "google/protobuf/wrappers.proto";
-import "dependencies/google/protobuf/timestamp.proto";
+import "google/protobuf/timestamp.proto";
 import "dependencies/gorm/options.proto";
 
 message Channel {

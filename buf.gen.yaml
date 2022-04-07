@@ -7,7 +7,7 @@ managed:
   go_package_prefix:
     default: github.com/tubetypes/api/gen
 plugins:
-  - name: go
+  - remote: buf.build/protocolbuffers/plugins/go:v1.27.1-1
     out: gen/go
     opt:
       - paths=source_relative
