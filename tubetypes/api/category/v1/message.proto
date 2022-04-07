@@ -9,5 +9,5 @@ message Category {
     uint64 id = 1 [(gorm.field).tag = {primary_key: true}];
     string name = 2  [(gorm.field).tag = {unique: true}];
     string display_name = 3;
-    string path = 4  [(gorm.field).tag = {unique: true}];
+    string path = 4;
 }
