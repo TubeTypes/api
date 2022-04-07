@@ -3,10 +3,11 @@ syntax = "proto3";
 package tubetypes.api.category.v1;
 
 import "dependencies/gorm/options.proto";
+import "dependencies/atlas/resource/v1/resource.proto";
 
 message Category {
     option (gorm.opts).ormable = true;
-    uint64 id = 1;    
+    atlas.resource.v1.Identifier id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true}];
     string name = 2;
     string display_name = 3;
     string path = 4;
