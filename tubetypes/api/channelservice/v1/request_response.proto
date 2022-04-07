@@ -47,18 +47,3 @@ message ListChannelsByCategoryResponse {
     string next_page_token = 2;
     repeated DescribeChannelResponse channels = 1;
 }
-
-message CreateChannelPreviewRequest {
-    tubetypes.api.channel.v1.ChannelVideo video = 1;
-}
-
-message CreateChannelPreviewResponse {
-}
-
-message ListChannelPreviewsRequest {
-    string channel_id = 1;
-}
-
-message ListChannelPreviewsResponse {
-    tubetypes.api.channel.v1.ChannelPreviews previews = 1;
-}

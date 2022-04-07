@@ -21,10 +21,4 @@ service ChannelService {
 
     rpc ListChannelsByCategory (ListChannelsByCategoryRequest) returns (ListChannelsByCategoryResponse) {
     }
-
-    rpc CreateChannelPreview (CreateChannelPreviewRequest) returns (CreateChannelPreviewResponse) {
-    }
-
-    rpc ListChannelPreviews (ListChannelPreviewsRequest) returns (ListChannelPreviewsResponse) {
-    }
 }

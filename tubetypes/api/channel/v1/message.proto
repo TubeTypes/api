@@ -20,18 +20,14 @@ message Channel {
     optional int64 subscriber_count = 8;
     int32 video_count = 9;
     tubetypes.api.category.v1.Category category = 10 [(gorm.field).belongs_to = {}];
-}
-
-message ChannelPreviews {
-    repeated ChannelVideo videos = 1;
+    repeated ChannelVideo previews = 11  [(gorm.field).has_many = {}]; 
 }
 
 message ChannelVideo {
     option (gorm.opts).ormable = true;
     uint64 id = 1;
-    string channel_id = 2;
-    string youtube_id = 3;
-    string title = 4;
-    int64 views = 5;
-    google.protobuf.Timestamp publish_time = 6;
+    string youtube_id = 2;
+    string title = 3;
+    int64 views = 4;
+    google.protobuf.Timestamp publish_time = 5;
 }
