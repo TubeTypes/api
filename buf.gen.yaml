@@ -5,21 +5,14 @@ managed:
   java_package_prefix: com
   java_string_check_utf8: false
   go_package_prefix:
-    default: github.com/tubetypes/api/private/gen/proto/go
-    except:
-      - buf.build/googleapis/googleapis
+    default: github.com/tubetypes/api/gen
 plugins:
   - name: go
-    out: gen/go
-    opt: paths=source_relative
-  - name: js
-    out: gen/nodejs
-    opt: import_style=commonjs,binary
-  - name: python
-    out: gen/python
-    opt: ""
-  - name: go-grpc
-    out: gen/go
+    out: gen
     opt:
       - paths=source_relative
-      - require_unimplemented_servers=false
+  - name: twirp
+    out: gen
+    opt:
+      - paths=source_relative
+    strategy: directory

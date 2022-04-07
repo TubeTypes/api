@@ -6,8 +6,6 @@ import "tubetypes/api/category/v1/message.proto";
 
 import "google/protobuf/timestamp.proto";
 
-import "dependencies/gogoproto/gogo.proto";
-
 message Channel {
     string id = 1;
     string youtube_id = 2;
@@ -31,5 +29,5 @@ message ChannelVideo {
     string youtube_id = 3;
     string title = 4;
     int64 views = 5;
-    google.protobuf.Timestamp publish_time = 6 [(gogoproto.stdtime) = true];
+    google.protobuf.Timestamp publish_time = 6;
 }
