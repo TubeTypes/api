@@ -8,11 +8,17 @@ managed:
     default: github.com/tubetypes/api/gen
 plugins:
   - name: go
-    out: gen
+    out: gen/go
     opt:
       - paths=source_relative
   - name: twirp
-    out: gen
+    out: gen/twirp
     opt:
       - paths=source_relative
     strategy: directory
+  - remote: buf.build/imerkle/plugins/protoc-gen-gorm:v1.0.0
+    out: gen/gorm-models
+    opt:
+      - paths=source_relative
+      - engine=postgres
+      - enums=string

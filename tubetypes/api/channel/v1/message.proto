@@ -5,7 +5,7 @@ package tubetypes.api.channel.v1;
 import "tubetypes/api/category/v1/message.proto";
 
 import "google/protobuf/timestamp.proto";
-import "options/gorm.proto";
+import "dependencies/gorm/options.proto";
 
 message Channel {
     option (gorm.opts).ormable = true;
@@ -18,7 +18,7 @@ message Channel {
     int64 total_views = 7;
     optional int64 subscriber_count = 8;
     int32 video_count = 9;
-    tubetypes.api.category.v1.Category category = 10 [(gorm.field).has_one = {}];
+    tubetypes.api.category.v1.Category category = 10 [(gorm.field).belongs_to = {}];
 }
 
 message ChannelPreviews {
