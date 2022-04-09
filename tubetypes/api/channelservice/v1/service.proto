@@ -21,4 +21,7 @@ service ChannelService {
 
     rpc ListChannelsByCategory (ListChannelsByCategoryRequest) returns (ListChannelsByCategoryResponse) {
     }
+
+    rpc AddChannelVideo (AddChannelVideoRequest) returns (AddChannelVideoResponse) {
+    }
 }

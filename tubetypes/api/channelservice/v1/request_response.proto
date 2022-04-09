@@ -47,3 +47,11 @@ message ListChannelsByCategoryResponse {
     string next_page_token = 2;
     repeated DescribeChannelResponse channels = 1;
 }
+
+message AddChannelVideoRequest {
+    string channel_id = 1;
+    tubetypes.api.channel.v1.ChannelVideo video = 2;
+}
+
+message AddChannelVideoResponse {
+}
