@@ -22,7 +22,7 @@ message ListChannelsResponse {
 }
 
 message DescribeChannelRequest {
-    string channel_id = 1;
+    uint64 channel_id = 1;
 }
 
 message DescribeChannelResponse {
@@ -40,7 +40,7 @@ message DescribeChannelByYoutubeIDResponse {
 message ListChannelsByCategoryRequest {
     int32 page_size = 1;
     string page_token = 2;
-    optional string category_id = 3;
+    optional uint64 category_id = 3;
 }
 
 message ListChannelsByCategoryResponse {
@@ -49,7 +49,7 @@ message ListChannelsByCategoryResponse {
 }
 
 message AddChannelVideoRequest {
-    string channel_id = 1;
+    uint64 channel_id = 1;
     tubetypes.api.channel.v1.ChannelVideo video = 2;
 }
 
