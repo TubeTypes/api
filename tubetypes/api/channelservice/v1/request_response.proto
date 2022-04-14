@@ -21,6 +21,16 @@ message ListChannelsResponse {
     repeated DescribeChannelResponse channels = 2;
 }
 
+message ListRandomChannelsRequest {
+    int32 page_size = 1;
+    string page_token = 2;
+}
+
+message ListRandomChannelsResponse {
+    string next_page_token = 1;
+    repeated DescribeChannelResponse channels = 2;
+}
+
 message DescribeChannelRequest {
     uint64 channel_id = 1;
 }
