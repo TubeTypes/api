@@ -3,6 +3,7 @@ syntax = "proto3";
 package tubetypes.api.categorisation.v1;
 
 import "dependencies/gorm/options.proto";
+import "google/protobuf/wrappers.proto";
 
 import "tubetypes/api/channel/v1/message.proto";
 
@@ -23,5 +24,5 @@ message NoCategoryVote {
     uint64 id = 1 [(gorm.field).tag = {primary_key: true}];
     string channel_id = 2;
     string account_id = 3 [(gorm.field).tag = {index: "no_category_account"}];
-    optional string suggestion = 4;
+    google.protobuf.StringValue suggestion = 4;
 }
