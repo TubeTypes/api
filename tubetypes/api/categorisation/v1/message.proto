@@ -4,7 +4,6 @@ package tubetypes.api.categorisation.v1;
 
 import "dependencies/gorm/options.proto";
 
-import "tubetypes/api/category/v1/message.proto";
 import "tubetypes/api/channel/v1/message.proto";
 
 message Categorisation {
@@ -14,14 +13,14 @@ message Categorisation {
 message AffirmativeVote {
     option (gorm.opts).ormable = true;
     uint64 id = 1 [(gorm.field).tag = {primary_key: true}];
-    tubetypes.api.channel.v1.Channel channel = 2 [(gorm.field).belongs_to = {}, (gorm.field).tag = {unique_index: "unique_account_channel"}];
-    tubetypes.api.category.v1.Category category = 3 [(gorm.field).belongs_to = {}];
+    string channel_id = 2 [(gorm.field).tag = {unique_index: "unique_account_channel"}];
+    string category_id = 3;
     string account_id = 4 [(gorm.field).tag = {index: "affirmative_account", unique_index: "unique_account_channel"}];
 }
 
 message NoCategoryVote {
     option (gorm.opts).ormable = true;
     uint64 id = 1 [(gorm.field).tag = {primary_key: true}];
-    tubetypes.api.channel.v1.Channel channel = 2 [(gorm.field).belongs_to = {}];
-    string account_id = 3 [(gorm.field).tag = {index: ",option:CONCURRENTLY"}];
+    string channel_id = 2;
+    string account_id = 3 [(gorm.field).tag = {index: "no_category_account"}];
 }
