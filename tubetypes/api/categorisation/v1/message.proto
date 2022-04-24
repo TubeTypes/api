@@ -2,8 +2,26 @@ syntax = "proto3";
 
 package tubetypes.api.categorisation.v1;
 
+import "dependencies/gorm/options.proto";
+
+import "tubetypes/api/category/v1/message.proto";
 import "tubetypes/api/channel/v1/message.proto";
 
 message Categorisation {
     tubetypes.api.channel.v1.Channel channel = 1;
+}
+
+message AffirmativeVote {
+    option (gorm.opts).ormable = true;
+    uint64 id = 1 [(gorm.field).tag = {primary_key: true}];
+    tubetypes.api.channel.v1.Channel channel = 2 [(gorm.field).belongs_to = {}, (gorm.field).tag = {index: "unique_user_channel,unique"}];
+    tubetypes.api.category.v1.Category category = 3 [(gorm.field).belongs_to = {}];
+    string account_id = 4 [(gorm.field).tag = {index: ",option:CONCURRENTLY;index:unique_user_channel,unique"}];
+}
+
+message NoCategoryVote {
+    option (gorm.opts).ormable = true;
+    uint64 id = 1 [(gorm.field).tag = {primary_key: true}];
+    tubetypes.api.channel.v1.Channel channel = 2 [(gorm.field).belongs_to = {}];
+    string account_id = 3 [(gorm.field).tag = {index: ",option:CONCURRENTLY"}];
 }
