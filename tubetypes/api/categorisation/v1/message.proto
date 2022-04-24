@@ -23,4 +23,5 @@ message NoCategoryVote {
     uint64 id = 1 [(gorm.field).tag = {primary_key: true}];
     string channel_id = 2;
     string account_id = 3 [(gorm.field).tag = {index: "no_category_account"}];
+    optional string suggestion = 4;
 }
