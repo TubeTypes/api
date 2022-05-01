@@ -22,7 +22,7 @@ message ListCategoriesResponse {
 }
 
 message DescribeCategoryRequest {
-    string category_id = 1;
+    uint64 category_id = 1;
 }
 
 message DescribeCategoryResponse {
