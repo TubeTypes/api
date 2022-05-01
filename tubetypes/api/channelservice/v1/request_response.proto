@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package tubetypes.api.channelservice.v1;
 
+import "google/protobuf/field_mask.proto";
+
 import "tubetypes/api/channel/v1/message.proto";
 
 message CreateChannelRequest {
@@ -64,4 +66,13 @@ message AddChannelVideoRequest {
 }
 
 message AddChannelVideoResponse {
+}
+
+message UpdateChannelRequest {
+    tubetypes.api.channel.v1.Channel channel = 1;
+    google.protobuf.FieldMask update_mask = 2;
+}
+
+message UpdateChannelResponse {
+    tubetypes.api.channel.v1.Channel channel = 1;
 }
