@@ -76,3 +76,13 @@ message UpdateChannelRequest {
 message UpdateChannelResponse {
     tubetypes.api.channel.v1.Channel channel = 1;
 }
+
+message ListRandomCategorisationsRequest {
+    int32 page_size = 1;
+    string page_token = 2;
+}
+
+message ListRandomCategorisationsResponse {
+    string next_page_token = 1;
+    repeated tubetypes.api.channel.v1.Categorisation categorisations = 2;
+}

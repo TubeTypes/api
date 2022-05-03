@@ -30,4 +30,7 @@ service ChannelService {
 
     rpc UpdateChannel (UpdateChannelRequest) returns (UpdateChannelResponse) {
     }
+
+    rpc ListRandomCategorisations(ListRandomCategorisationsRequest) returns (ListRandomCategorisationsResponse) {
+    }
 }

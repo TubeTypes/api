@@ -16,7 +16,4 @@ service CategoryService {
     rpc ListCategories (ListCategoriesRequest) returns (ListCategoriesResponse) {
     }
 
-    rpc ListRandomCategorisations(ListRandomCategorisationsRequest) returns (ListRandomCategorisationsResponse) {
-    }
-
 }

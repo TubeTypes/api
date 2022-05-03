@@ -3,7 +3,6 @@ syntax = "proto3";
 package tubetypes.api.categoryservice.v1;
 
 import "tubetypes/api/category/v1/message.proto";
-import "tubetypes/api/categorisation/v1/message.proto";
 
 message CreateCategoryRequest {
     tubetypes.api.category.v1.Category category = 1;
@@ -28,14 +27,4 @@ message DescribeCategoryRequest {
 
 message DescribeCategoryResponse {
     tubetypes.api.category.v1.Category category = 1;
-}
-
-message ListRandomCategorisationsRequest {
-    int32 page_size = 1;
-    string page_token = 2;
-}
-
-message ListRandomCategorisationsResponse {
-    string next_page_token = 1;
-    repeated tubetypes.api.categorisation.v1.Categorisation categorisations = 2;
 }

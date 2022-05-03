@@ -31,3 +31,7 @@ message ChannelVideo {
     int64 views = 4;
     google.protobuf.Timestamp publish_time = 5;
 }
+
+message Categorisation {
+    tubetypes.api.channel.v1.Channel channel = 1;
+}
