@@ -31,7 +31,6 @@ message ChannelVideo {
     string title = 4;
     int64 views = 5;
     string youtube_category_id = 6;
-    repeated string topic_ids = 7;
 }
 
 message Categorisation {
