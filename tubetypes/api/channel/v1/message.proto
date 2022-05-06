@@ -27,9 +27,11 @@ message ChannelVideo {
     option (gorm.opts).ormable = true;
     uint64 id = 1 [(gorm.field).tag = {primary_key: true}];
     string youtube_id = 2;
-    string title = 3;
-    int64 views = 4;
-    google.protobuf.Timestamp publish_time = 5;
+    google.protobuf.Timestamp publish_time = 3;
+    string title = 4;
+    int64 views = 5;
+    string youtube_category_id = 6;
+    repeated string topic_ids = 7;
 }
 
 message Categorisation {
