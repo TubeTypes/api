@@ -26,7 +26,7 @@ message Channel {
 message ChannelVideo {
     option (gorm.opts).ormable = true;
     uint64 id = 1 [(gorm.field).tag = {primary_key: true}];
-    string youtube_id = 2;
+    string youtube_id = 2 [(gorm.field).tag = {unique: true}];
     google.protobuf.Timestamp publish_time = 3;
     string title = 4;
     int64 views = 5;
