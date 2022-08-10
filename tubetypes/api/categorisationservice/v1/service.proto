@@ -12,4 +12,7 @@ service CategorisationService {
 
     rpc ListPendingAffirmativeVotes(ListPendingAffirmativeVotesRequest) returns (ListPendingAffirmativeVotesResponse) {
     }
+
+    rpc ListPendingNoCategoryVotes(ListPendingNoCategoryVotesRequest) returns (ListPendingNoCategoryVotesResponse) {
+    }
 }
