@@ -10,6 +10,6 @@ service CategorisationService {
     rpc GetAccountStatistics(GetAccountStatisticsRequest) returns (GetAccountStatisticsResponse){
     }
 
-    rpc ListPendingVotes(ListPendingVotesRequest) returns (ListPendingVotesResponse) {
+    rpc ListPendingAffirmativeVotes(ListPendingAffirmativeVotesRequest) returns (ListPendingAffirmativeVotesResponse) {
     }
 }
