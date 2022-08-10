@@ -9,4 +9,7 @@ import "tubetypes/api/categorisationservice/v1/request_response.proto";
 service CategorisationService {
     rpc GetAccountStatistics(GetAccountStatisticsRequest) returns (GetAccountStatisticsResponse){
     }
+
+    rpc ListPendingVotes(ListPendingVotesRequest) returns (ListPendingVotesResponse) {
+    }
 }

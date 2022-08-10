@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package tubetypes.api.categorisationservice.v1;
 
+import "tubetypes/api/categorisation/v1/message.proto";
+
 message GetAccountStatisticsRequest {
     string account_id = 1;
 }
@@ -9,4 +11,11 @@ message GetAccountStatisticsRequest {
 message GetAccountStatisticsResponse {
     int32 total_affirmative_votes = 1;
     int32 total_no_category_votes = 2;
+}
+
+message ListPendingVotesRequest {}
+
+message ListPendingVotesResponse {
+    repeated tubetypes.api.categorisation.v1.AffirmativeVote affirmative_votes = 1;
+    repeated tubetypes.api.categorisation.v1.NoCategoryVote no_category_votes = 2;
 }
