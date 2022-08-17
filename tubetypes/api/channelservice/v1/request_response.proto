@@ -98,10 +98,10 @@ message ListUserSubscriptionsResponse {
     repeated tubetypes.api.channel.v1.Subscription subscriptions = 2;
 }
 
-message UpdateUserSubscriptionsRequest {
+message ReplaceUserSubscriptionsRequest {
     string user_id = 1;
     repeated tubetypes.api.channel.v1.Subscription subscriptions = 2;
 }
 
-message UpdateUserSubscriptionsResponse {
+message ReplaceUserSubscriptionsResponse {
 }
