@@ -40,6 +40,6 @@ message Categorisation {
 message Subscription {
     option (gorm.opts).ormable = true;
     uint64 id = 1 [(gorm.field).tag = {primary_key: true}];
-    uint64 channel_id = 2;
+    string channel_youtube_id = 2;
     string user_id = 3;
 }
