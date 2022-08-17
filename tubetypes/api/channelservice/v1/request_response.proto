@@ -80,6 +80,7 @@ message UpdateChannelResponse {
 message ListRandomCategorisationsRequest {
     int32 page_size = 1;
     string page_token = 2;
+    string user_id = 3;
 }
 
 message ListRandomCategorisationsResponse {
