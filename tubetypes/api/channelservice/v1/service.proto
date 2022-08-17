@@ -34,6 +34,9 @@ service ChannelService {
     rpc ListUserSubscriptions (ListUserSubscriptionsRequest) returns (ListUserSubscriptionsResponse) {
     }
 
+    rpc UpdateUserSubscriptions (UpdateUserSubscriptionsRequest) returns (UpdateUserSubscriptionsResponse) {
+    }
+
     rpc ListRandomCategorisations(ListRandomCategorisationsRequest) returns (ListRandomCategorisationsResponse) {
     }
 }
