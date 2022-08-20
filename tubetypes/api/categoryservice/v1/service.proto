@@ -16,4 +16,6 @@ service CategoryService {
     rpc ListCategories (ListCategoriesRequest) returns (ListCategoriesResponse) {
     }
 
+    rpc UpdateCategory(UpdateCategoryRequest) returns (UpdateCategoryResponse) {
+    }
 }

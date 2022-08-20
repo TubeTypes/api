@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package tubetypes.api.categoryservice.v1;
 
+import "google/protobuf/field_mask.proto";
+
 import "tubetypes/api/category/v1/message.proto";
 
 message CreateCategoryRequest {
@@ -26,5 +28,14 @@ message DescribeCategoryRequest {
 }
 
 message DescribeCategoryResponse {
+    tubetypes.api.category.v1.Category category = 1;
+}
+
+message UpdateCategoryRequest {
+    tubetypes.api.category.v1.Category category = 1;
+    google.protobuf.FieldMask update_mask = 2;
+}
+
+message UpdateCategoryResponse {
     tubetypes.api.category.v1.Category category = 1;
 }
