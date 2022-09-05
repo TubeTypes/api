@@ -56,8 +56,8 @@ message ListChannelsByCategoryRequest {
 }
 
 message ListChannelsByCategoryResponse {
-    string next_page_token = 2;
-    repeated DescribeChannelResponse channels = 1;
+    string next_page_token = 1;
+    repeated DescribeChannelResponse channels = 2;
 }
 
 message AddChannelVideoRequest {
@@ -105,4 +105,14 @@ message ReplaceUserSubscriptionsRequest {
 }
 
 message ReplaceUserSubscriptionsResponse {
+}
+
+message ListStaleChannelsRequest {
+    int32 page_size = 1;
+    string page_token = 2;
+}
+
+message ListStaleChannelsResponse {
+    string next_page_token = 1;
+    repeated DescribeChannelResponse channels = 2;
 }
