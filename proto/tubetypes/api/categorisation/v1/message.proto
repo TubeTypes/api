@@ -2,25 +2,26 @@ syntax = "proto3";
 
 package tubetypes.api.categorisation.v1;
 
+import "atlas/resource/v1/resource.proto";
 import "protoc-gen-gorm/options/gorm.proto";
 import "google/protobuf/wrappers.proto";
 import "google/protobuf/timestamp.proto";
 
 message AffirmativeVote {
     option (gorm.opts).ormable = true;
-    uint64 id = 1 [(gorm.field).tag = {primary_key: true}];
-    uint64 channel_id = 2 [(gorm.field).tag = {unique_index: "unique_account_channel"}];
-    uint64 category_id = 3;
-    string account_id = 4 [(gorm.field).tag = {index: "affirmative_account", unique_index: "unique_account_channel"}];
+    atlas.rpc.Identifier id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true}];
+    atlas.rpc.Identifier channel_id = 2 [(gorm.field).tag = {unique_index: "unique_account_channel"}];
+    atlas.rpc.Identifier category_id = 3;
+    atlas.rpc.Identifier account_id = 4 [(gorm.field).tag = {index: "affirmative_account", unique_index: "unique_account_channel"}];
     google.protobuf.Timestamp created_at = 5;
     google.protobuf.Timestamp consolidated_at = 6;
 }
 
 message NoCategoryVote {
     option (gorm.opts).ormable = true;
-    uint64 id = 1 [(gorm.field).tag = {primary_key: true}];
-    uint64 channel_id = 2;
-    string account_id = 3 [(gorm.field).tag = {index: "no_category_account"}];
+    atlas.rpc.Identifier id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true}];
+    atlas.rpc.Identifier channel_id = 2;
+    atlas.rpc.Identifier account_id = 3 [(gorm.field).tag = {index: "no_category_account"}];
     google.protobuf.StringValue suggestion = 4;
     google.protobuf.Timestamp created_at = 5;
 }

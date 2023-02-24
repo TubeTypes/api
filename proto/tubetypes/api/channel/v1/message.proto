@@ -2,15 +2,16 @@ syntax = "proto3";
 
 package tubetypes.api.channel.v1;
 
-import "tubetypes/api/category/v1/message.proto";
-
+import "atlas/resource/v1/resource.proto";
 import "google/protobuf/wrappers.proto";
 import "google/protobuf/timestamp.proto";
 import "protoc-gen-gorm/options/gorm.proto";
 
+import "tubetypes/api/category/v1/message.proto";
+
 message Channel {
     option (gorm.opts).ormable = true;
-    uint64 id = 1 [(gorm.field).tag = {primary_key: true}];
+    atlas.rpc.Identifier id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true}];
     string youtube_id = 2 [(gorm.field).tag = {unique: true}];
     string title = 3;
     string thumbnail_standard = 4;
@@ -27,7 +28,7 @@ message Channel {
 
 message ChannelVideo {
     option (gorm.opts).ormable = true;
-    uint64 id = 1 [(gorm.field).tag = {primary_key: true}];
+    atlas.rpc.Identifier id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true}];
     string youtube_id = 2 [(gorm.field).tag = {unique: true}];
     google.protobuf.Timestamp publish_time = 3;
     string title = 4;
@@ -43,7 +44,7 @@ message Categorisation {
 
 message Subscription {
     option (gorm.opts).ormable = true;
-    uint64 id = 1 [(gorm.field).tag = {primary_key: true}];
+    atlas.rpc.Identifier id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true}];
     string channel_youtube_id = 2;
-    string user_id = 3;
+    atlas.rpc.Identifier user_id = 3;
 }

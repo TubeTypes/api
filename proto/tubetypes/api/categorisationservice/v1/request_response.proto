@@ -2,10 +2,12 @@ syntax = "proto3";
 
 package tubetypes.api.categorisationservice.v1;
 
+import "atlas/resource/v1/resource.proto";
+
 import "tubetypes/api/categorisation/v1/message.proto";
 
 message GetAccountStatisticsRequest {
-    string account_id = 1;
+    atlas.rpc.Identifier account_id = 1;
 }
 
 message GetAccountStatisticsResponse {

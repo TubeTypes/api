@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package tubetypes.api.categoryservice.v1;
 
+import "atlas/resource/v1/resource.proto";
 import "google/protobuf/field_mask.proto";
 
 import "tubetypes/api/category/v1/message.proto";
@@ -24,7 +25,7 @@ message ListCategoriesResponse {
 }
 
 message DescribeCategoryRequest {
-    uint64 category_id = 1;
+    atlas.rpc.Identifier category_id = 1;
 }
 
 message DescribeCategoryResponse {
