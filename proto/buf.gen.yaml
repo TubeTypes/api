@@ -16,7 +16,7 @@ plugins:
     opt:
       - paths=source_relative
     strategy: directory
-  - remote: buf.build/imerkle/plugins/protoc-gen-gorm:v1.0.0
+  - name: gorm
     out: gen/gorm-models
     opt:
       - paths=source_relative

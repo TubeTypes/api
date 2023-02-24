@@ -21,7 +21,7 @@ SHELL := PATH=$(GOBIN):$(PATH) /bin/sh
 
 COLOR := "\e[1;36m%s\e[0m\n"
 
-PROTO_ROOT := .
+PROTO_ROOT := proto
 PROTO_FILES = $(shell find $(PROTO_ROOT) -name "*.proto")
 PROTO_DIRS = $(sort $(dir $(PROTO_FILES)))
 PROTO_OUT := gen
@@ -37,7 +37,7 @@ grpc-install: buf-install api-linter-install
 .PHONY: buf-generate
 buf-generate:
 	printf $(COLOR) "Run buf generate..."
-	(cd $(PROTO_ROOT) && buf generate)
+	(cd $(PROTO_ROOT) && buf generate )
 
 ##### Plugins & tools #####
 api-linter-install:
@@ -47,6 +47,10 @@ api-linter-install:
 buf-install:
 	printf $(COLOR) "Install/update buf..."
 	go install github.com/bufbuild/buf/cmd/buf@v1.1.0
+
+protoc-gen-gorm-install:
+	printf $(COLOR) "Install/update protoc-gen-gorm..."
+	go install github.com/infobloxopen/protoc-gen-gorm@cedaaf0105d24596b9987100c864b1021d362519
 
 ##### Linters #####
 api-linter:

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package tubetypes.api.category.v1;
 
-import "dependencies/gorm/options.proto";
+import "protoc-gen-gorm/options/gorm.proto";
 
 message Category {
     option (gorm.opts).ormable = true;

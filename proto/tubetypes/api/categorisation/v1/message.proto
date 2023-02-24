@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package tubetypes.api.categorisation.v1;
 
-import "dependencies/gorm/options.proto";
+import "protoc-gen-gorm/options/gorm.proto";
 import "google/protobuf/wrappers.proto";
 import "google/protobuf/timestamp.proto";
 

@@ -6,7 +6,7 @@ import "tubetypes/api/category/v1/message.proto";
 
 import "google/protobuf/wrappers.proto";
 import "google/protobuf/timestamp.proto";
-import "dependencies/gorm/options.proto";
+import "protoc-gen-gorm/options/gorm.proto";
 
 message Channel {
     option (gorm.opts).ormable = true;
