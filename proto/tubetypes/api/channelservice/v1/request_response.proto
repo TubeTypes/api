@@ -83,7 +83,7 @@ message UpdateChannelResponse {
 message ListRandomCategorisationsRequest {
     int32 page_size = 1;
     string page_token = 2;
-    atlas.rpc.Identifier user_id = 3;
+    string user_id = 3;
 }
 
 message ListRandomCategorisationsResponse {
@@ -94,7 +94,7 @@ message ListRandomCategorisationsResponse {
 message ListUserSubscriptionsRequest {
     int32 page_size = 1;
     string page_token = 2;
-    atlas.rpc.Identifier user_id = 3;
+    string user_id = 3;
 }
 
 message ListUserSubscriptionsResponse {
@@ -103,7 +103,7 @@ message ListUserSubscriptionsResponse {
 }
 
 message ReplaceUserSubscriptionsRequest {
-    atlas.rpc.Identifier user_id = 1;
+    string user_id = 1;
     repeated tubetypes.api.channel.v1.Subscription subscriptions = 2;
 }
 
