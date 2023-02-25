@@ -2,15 +2,13 @@ syntax = "proto3";
 
 package tubetypes.api.categorisationservice.v1;
 
-import "atlas/resource/v1/resource.proto";
-
 import "tubetypes/api/categorisation/v1/message.proto";
 
-message GetAccountStatisticsRequest {
-    atlas.rpc.Identifier account_id = 1;
+message GetUserStatisticsRequest {
+    string user_id = 1;
 }
 
-message GetAccountStatisticsResponse {
+message GetUserStatisticsResponse {
     int32 total_affirmative_votes = 1;
     int32 total_no_category_votes = 2;
 }
