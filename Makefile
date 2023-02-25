@@ -37,7 +37,7 @@ grpc-install: buf-install api-linter-install
 .PHONY: buf-generate
 buf-generate:
 	printf $(COLOR) "Run buf generate..."
-	(cd $(PROTO_ROOT) && buf generate )
+	(cd $(PROTO_ROOT) && buf generate)
 
 ##### Plugins & tools #####
 api-linter-install:
@@ -46,7 +46,7 @@ api-linter-install:
 
 buf-install:
 	printf $(COLOR) "Install/update buf..."
-	go install github.com/bufbuild/buf/cmd/buf@v1.1.0
+	go install github.com/bufbuild/buf/cmd/buf@v1.14.0
 
 protoc-gen-gorm-install:
 	printf $(COLOR) "Install/update protoc-gen-gorm..."

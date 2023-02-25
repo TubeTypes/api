@@ -6,8 +6,10 @@ managed:
   java_string_check_utf8: false
   go_package_prefix:
     default: github.com/tubetypes/api/gen
+    except:
+      - buf.build/tubetypes/dependencies
 plugins:
-  - remote: buf.build/protocolbuffers/plugins/go:v1.27.1-1
+  - plugin: buf.build/protocolbuffers/go:v1.28.1
     out: gen/go
     opt:
       - paths=source_relative
@@ -17,7 +19,7 @@ plugins:
       - paths=source_relative
     strategy: directory
   - name: gorm
-    out: gen/gorm-models
+    out: gen/go
     opt:
       - paths=source_relative
       - engine=postgres
