@@ -11,7 +11,7 @@ import "tubetypes/api/category/v1/message.proto";
 
 message Channel {
     option (gorm.opts).ormable = true;
-    atlas.rpc.Identifier id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true}];
+    atlas.rpc.Identifier id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "gen_random_uuid()"}];
     string youtube_id = 2 [(gorm.field).tag = {unique: true}];
     string title = 3;
     string thumbnail_standard = 4;
@@ -21,14 +21,14 @@ message Channel {
     google.protobuf.Int64Value subscriber_count = 8;
     int32 video_count = 9;
     tubetypes.api.category.v1.Category category = 10 [(gorm.field).belongs_to = {}];
-    repeated ChannelVideo previews = 11  [(gorm.field).has_many = {}]; 
+    repeated ChannelVideo previews = 11  [(gorm.field).has_many = {preload: true}]; 
     google.protobuf.Timestamp created_at = 12;
     google.protobuf.Timestamp updated_at = 13;
 }
 
 message ChannelVideo {
     option (gorm.opts).ormable = true;
-    atlas.rpc.Identifier id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true}];
+    atlas.rpc.Identifier id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "gen_random_uuid()"}];
     string youtube_id = 2 [(gorm.field).tag = {unique: true}];
     google.protobuf.Timestamp publish_time = 3;
     string title = 4;
@@ -44,7 +44,7 @@ message Categorisation {
 
 message Subscription {
     option (gorm.opts).ormable = true;
-    atlas.rpc.Identifier id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true}];
+    atlas.rpc.Identifier id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "gen_random_uuid()"}];
     string channel_youtube_id = 2;
     string user_id = 3;
 }

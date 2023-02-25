@@ -9,7 +9,7 @@ import "google/protobuf/timestamp.proto";
 
 message AffirmativeVote {
     option (gorm.opts).ormable = true;
-    atlas.rpc.Identifier id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true}];
+    atlas.rpc.Identifier id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "gen_random_uuid()"}];
     atlas.rpc.Identifier channel_id = 2 [(gorm.field).tag = {unique_index: "unique_account_channel"}];
     atlas.rpc.Identifier category_id = 3;
     atlas.rpc.Identifier account_id = 4 [(gorm.field).tag = {index: "affirmative_account", unique_index: "unique_account_channel"}];
@@ -19,7 +19,7 @@ message AffirmativeVote {
 
 message NoCategoryVote {
     option (gorm.opts).ormable = true;
-    atlas.rpc.Identifier id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true}];
+    atlas.rpc.Identifier id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "gen_random_uuid()"}];
     atlas.rpc.Identifier channel_id = 2;
     atlas.rpc.Identifier account_id = 3 [(gorm.field).tag = {index: "no_category_account"}];
     google.protobuf.StringValue suggestion = 4;
