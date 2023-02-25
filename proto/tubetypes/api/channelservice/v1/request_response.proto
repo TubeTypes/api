@@ -108,6 +108,7 @@ message ReplaceUserSubscriptionsRequest {
 }
 
 message ReplaceUserSubscriptionsResponse {
+    repeated tubetypes.api.channel.v1.Subscription subscriptions = 1;
 }
 
 message ListStaleChannelsRequest {
