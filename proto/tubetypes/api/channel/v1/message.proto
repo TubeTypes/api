@@ -46,5 +46,5 @@ message Subscription {
     option (gorm.opts).ormable = true;
     atlas.rpc.Identifier id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true}];
     string channel_youtube_id = 2;
-    atlas.rpc.Identifier user_id = 3;
+    string user_id = 3;
 }
