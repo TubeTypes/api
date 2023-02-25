@@ -2,12 +2,11 @@ syntax = "proto3";
 
 package tubetypes.api.category.v1;
 
-import "atlas/resource/v1/resource.proto";
 import "protoc-gen-gorm/options/gorm.proto";
 
 message Category {
     option (gorm.opts).ormable = true;
-    atlas.rpc.Identifier id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "gen_random_uuid()"}];
+    string id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "gen_random_uuid()"}];
     string name = 2  [(gorm.field).tag = {unique: true}];
     string display_name = 3;
     string path = 4;

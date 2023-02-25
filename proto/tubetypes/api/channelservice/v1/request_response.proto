@@ -2,7 +2,6 @@ syntax = "proto3";
 
 package tubetypes.api.channelservice.v1;
 
-import "atlas/resource/v1/resource.proto";
 import "google/protobuf/field_mask.proto";
 
 import "tubetypes/api/channel/v1/message.proto";
@@ -37,7 +36,7 @@ message ListRandomChannelsResponse {
 }
 
 message DescribeChannelRequest {
-    atlas.rpc.Identifier channel_id = 1;
+    string channel_id = 1;
 }
 
 message DescribeChannelResponse {
@@ -55,7 +54,7 @@ message DescribeChannelByYoutubeIDResponse {
 message ListChannelsByCategoryRequest {
     int32 page_size = 1;
     string page_token = 2;
-    optional atlas.rpc.Identifier category_id = 3;
+    optional string category_id = 3;
 }
 
 message ListChannelsByCategoryResponse {
@@ -64,7 +63,7 @@ message ListChannelsByCategoryResponse {
 }
 
 message AddChannelVideoRequest {
-    atlas.rpc.Identifier channel_id = 1;
+    string channel_id = 1;
     tubetypes.api.channel.v1.ChannelVideo video = 2;
 }
 
