@@ -119,3 +119,12 @@ message ListStaleChannelsResponse {
     string next_page_token = 1;
     repeated DescribeChannelResponse channels = 2;
 }
+
+message GetUserSubscriptionStatisticsRequest {
+    string user_id = 1;
+}
+
+message GetUserSubscriptionStatisticsResponse {
+    string top_category_id = 1;
+    string latest_category_id = 2;
+}

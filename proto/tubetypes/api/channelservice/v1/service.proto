@@ -42,4 +42,7 @@ service ChannelService {
 
     rpc ListRandomCategorisations(ListRandomCategorisationsRequest) returns (ListRandomCategorisationsResponse) {
     }
+
+    rpc GetUserSubscriptionStatistics(GetUserSubscriptionStatisticsRequest) returns (GetUserSubscriptionStatisticsResponse) {
+    }
 }
