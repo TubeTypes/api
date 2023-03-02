@@ -46,4 +46,6 @@ message Subscription {
     string id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "gen_random_uuid()"}];
     string channel_youtube_id = 2;
     string user_id = 3;
+    google.protobuf.Timestamp created_at = 12;
+    google.protobuf.Timestamp updated_at = 13;
 }
