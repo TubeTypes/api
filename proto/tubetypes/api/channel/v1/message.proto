@@ -16,9 +16,9 @@ message Channel {
     string thumbnail_standard = 4;
     string thumbnail_medium = 5;
     string thumbnail_high = 6;
-    int64 total_views = 7;
-    int64 subscriber_count = 8;
-    int32 video_count = 9;
+    uint64 total_views = 7;
+    uint64 subscriber_count = 8;
+    uint32 video_count = 9;
     tubetypes.api.category.v1.Category category = 10 [(gorm.field).belongs_to = {}];
     repeated ChannelVideo previews = 11  [(gorm.field).has_many = {preload: true}]; 
     google.protobuf.Timestamp created_at = 12;
@@ -31,7 +31,7 @@ message ChannelVideo {
     string youtube_id = 2 [(gorm.field).tag = {unique: true}];
     google.protobuf.Timestamp publish_time = 3;
     string title = 4;
-    int64 views = 5;
+    uint64 views = 5;
     string youtube_category_id = 6;
     google.protobuf.Timestamp created_at = 7;
     google.protobuf.Timestamp updated_at = 8;
