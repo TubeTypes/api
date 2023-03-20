@@ -17,7 +17,7 @@ message Channel {
     string thumbnail_medium = 5;
     string thumbnail_high = 6;
     int64 total_views = 7;
-    google.protobuf.Int64Value subscriber_count = 8;
+    int64 subscriber_count = 8;
     int32 video_count = 9;
     tubetypes.api.category.v1.Category category = 10 [(gorm.field).belongs_to = {}];
     repeated ChannelVideo previews = 11  [(gorm.field).has_many = {preload: true}]; 
