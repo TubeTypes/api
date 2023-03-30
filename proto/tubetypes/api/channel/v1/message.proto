@@ -23,6 +23,8 @@ message Channel {
     repeated ChannelVideo previews = 11  [(gorm.field).has_many = {preload: true}]; 
     google.protobuf.Timestamp created_at = 12;
     google.protobuf.Timestamp updated_at = 13;
+
+    string country = 14;
 }
 
 message ChannelVideo {
