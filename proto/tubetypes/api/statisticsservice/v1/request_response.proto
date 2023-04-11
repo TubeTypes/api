@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package tubetypes.api.statisticsservice.v1;
+
+import "tubetypes/api/statistics/v1/message.proto";
+
+message GetUserStatisticsRequest {
+    string user_id = 1;
+}
+
+message GetUserStatisticsResponse {
+    tubetypes.api.statistics.v1.UserStatistics pending_votes = 1;
+}

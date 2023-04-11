@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package tubetypes.api.statistics.v1;
+
+import "protoc-gen-gorm/options/gorm.proto";
+import "google/protobuf/timestamp.proto";
+
+import "tubetypes/api/category/v1/message.proto";
+
+message UserStatistics {
+    option (gorm.opts).ormable = true;
+    string id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "gen_random_uuid()"}];
+    string user_id = 2 [(gorm.field).tag = {index: "statistics_user_account", unique_index: "unique_statistics_user_account"}];
+    google.protobuf.Timestamp created_at = 3;
+    google.protobuf.Timestamp updated_at = 4;
+
+    tubetypes.api.category.v1.Category most_subscribed_category = 5  [(gorm.field).belongs_to = {}];
+    tubetypes.api.category.v1.Category most_recently_subscribed_category = 6  [(gorm.field).belongs_to = {}];
+    int32 total_distinct_categories = 7;
+}

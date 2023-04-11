@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package tubetypes.api.statisticsservice.v1;
+
+import "tubetypes/api/statisticsservice/v1/request_response.proto";
+
+// StatisticsService API defines how TubeTypes requests information about
+// any user or channel data.
+service StatisticsService {
+    rpc GetUserStatistics(GetUserStatisticsRequest) returns (GetUserStatisticsResponse){
+    }
+}
