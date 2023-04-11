@@ -9,5 +9,5 @@ message GetUserStatisticsRequest {
 }
 
 message GetUserStatisticsResponse {
-    tubetypes.api.statistics.v1.UserStatistics pending_votes = 1;
+    tubetypes.api.statistics.v1.UserStatistics user_statistics = 1;
 }
