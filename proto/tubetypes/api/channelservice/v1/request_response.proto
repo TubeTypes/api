@@ -27,7 +27,6 @@ message ListChannelsResponse {
 message ListRandomChannelsRequest {
     int32 page_size = 1;
     string page_token = 2;
-    optional string excluded_subscriptions_user_id = 3;
 }
 
 message ListRandomChannelsResponse {
@@ -54,7 +53,7 @@ message DescribeChannelByYoutubeIDResponse {
 message ListChannelsByCategoryRequest {
     int32 page_size = 1;
     string page_token = 2;
-    optional string category_id = 3;
+    string category_id = 3;
 }
 
 message ListChannelsByCategoryResponse {

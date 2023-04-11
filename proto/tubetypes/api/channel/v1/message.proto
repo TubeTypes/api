@@ -2,7 +2,6 @@ syntax = "proto3";
 
 package tubetypes.api.channel.v1;
 
-import "google/protobuf/wrappers.proto";
 import "google/protobuf/timestamp.proto";
 import "protoc-gen-gorm/options/gorm.proto";
 
