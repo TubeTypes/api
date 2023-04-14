@@ -22,8 +22,9 @@ message Channel {
     repeated ChannelVideo previews = 11  [(gorm.field).has_many = {preload: true}]; 
     google.protobuf.Timestamp created_at = 12;
     google.protobuf.Timestamp updated_at = 13;
+    google.protobuf.Timestamp deleted_at = 14;
 
-    string country = 14;
+    string country = 15;
 }
 
 message ChannelVideo {
@@ -36,6 +37,7 @@ message ChannelVideo {
     string youtube_category_id = 6;
     google.protobuf.Timestamp created_at = 7;
     google.protobuf.Timestamp updated_at = 8;
+    google.protobuf.Timestamp deleted_at = 9;
 }
 
 message Categorisation {
@@ -49,4 +51,5 @@ message Subscription {
     string user_id = 3;
     google.protobuf.Timestamp created_at = 12;
     google.protobuf.Timestamp updated_at = 13;
+    google.protobuf.Timestamp deleted_at = 14;
 }

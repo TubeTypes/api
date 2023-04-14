@@ -3,6 +3,7 @@ syntax = "proto3";
 package tubetypes.api.category.v1;
 
 import "protoc-gen-gorm/options/gorm.proto";
+import "google/protobuf/timestamp.proto";
 
 message Category {
     option (gorm.opts).ormable = true;
@@ -10,4 +11,7 @@ message Category {
     string name = 2  [(gorm.field).tag = {unique: true}];
     string display_name = 3;
     string path = 4;
+    google.protobuf.Timestamp created_at = 5;
+    google.protobuf.Timestamp updated_at = 6;
+    google.protobuf.Timestamp deleted_at = 7;
 }
