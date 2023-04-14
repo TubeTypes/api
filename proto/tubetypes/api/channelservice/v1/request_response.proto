@@ -79,7 +79,7 @@ message UpdateChannelResponse {
 }
 
 message DeleteChannelRequest {
-    string youtube_id = 1;
+    string channel_id = 1;
 }
 
 message DeleteChannelResponse {
