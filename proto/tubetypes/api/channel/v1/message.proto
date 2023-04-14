@@ -25,6 +25,7 @@ message Channel {
     google.protobuf.Timestamp deleted_at = 14;
 
     string country = 15;
+    google.protobuf.Timestamp terminated_at = 16;
 }
 
 message ChannelVideo {
