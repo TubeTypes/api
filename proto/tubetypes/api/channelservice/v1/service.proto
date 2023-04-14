@@ -34,6 +34,9 @@ service ChannelService {
     rpc UpdateChannel (UpdateChannelRequest) returns (UpdateChannelResponse) {
     }
 
+    rpc DeleteChannel (DeleteChannelRequest) returns (DeleteChannelResponse) {
+    }
+
     rpc ListUserSubscriptions (ListUserSubscriptionsRequest) returns (ListUserSubscriptionsResponse) {
     }
 

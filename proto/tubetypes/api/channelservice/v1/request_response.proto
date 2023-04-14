@@ -78,6 +78,13 @@ message UpdateChannelResponse {
     tubetypes.api.channel.v1.Channel channel = 1;
 }
 
+message DeleteChannelRequest {
+    string youtube_id = 1;
+}
+
+message DeleteChannelResponse {
+}
+
 message ListRandomCategorisationsRequest {
     int32 page_size = 1;
     string page_token = 2;
