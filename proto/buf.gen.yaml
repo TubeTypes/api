@@ -22,5 +22,5 @@ plugins:
     out: gen/go
     opt:
       - paths=source_relative
-      - engine=mysql
+      - engine=postgres
       - enums=string
