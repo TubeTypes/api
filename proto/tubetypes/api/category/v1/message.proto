@@ -7,7 +7,7 @@ import "google/protobuf/timestamp.proto";
 
 message Category {
     option (gorm.opts).ormable = true;
-    string id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "UUID()"}];
+    string id = 1 [(gorm.field).tag = {type: "varchar(36)" primary_key: true default: "(uuid())"}];
     string name = 2  [(gorm.field).tag = {unique: true}];
     string display_name = 3;
     string path = 4;

@@ -8,7 +8,7 @@ import "google/protobuf/timestamp.proto";
 
 message AffirmativeVote {
     option (gorm.opts).ormable = true;
-    string id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "UUID()"}];
+    string id = 1 [(gorm.field).tag = {type: "varchar(36)" primary_key: true default: "(uuid())"}];
     string channel_id = 2 [(gorm.field).tag = {unique_index: "unique_account_channel"}];
     string category_id = 3;
     string user_id = 4 [(gorm.field).tag = {index: "affirmative_account", unique_index: "unique_account_channel"}];
@@ -18,7 +18,7 @@ message AffirmativeVote {
 
 message NoCategoryVote {
     option (gorm.opts).ormable = true;
-    string id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "UUID()"}];
+    string id = 1 [(gorm.field).tag = {type: "varchar(36)" primary_key: true default: "(uuid())"}];
     string channel_id = 2;
     string user_id = 3 [(gorm.field).tag = {index: "no_category_account"}];
     google.protobuf.StringValue suggestion = 4;

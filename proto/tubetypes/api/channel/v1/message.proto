@@ -9,7 +9,7 @@ import "tubetypes/api/category/v1/message.proto";
 
 message Channel {
     option (gorm.opts).ormable = true;
-    string id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "UUID()"}];
+    string id = 1 [(gorm.field).tag = {type: "varchar(36)" primary_key: true default: "(uuid())"}];
     string youtube_id = 2 [(gorm.field).tag = {unique: true}];
     string title = 3;
     string thumbnail_standard = 4;
@@ -30,7 +30,7 @@ message Channel {
 
 message ChannelVideo {
     option (gorm.opts).ormable = true;
-    string id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "UUID()"}];
+    string id = 1 [(gorm.field).tag = {type: "varchar(36)" primary_key: true default: "(uuid())"}];
     string youtube_id = 2 [(gorm.field).tag = {unique: true}];
     google.protobuf.Timestamp publish_time = 3;
     string title = 4;
@@ -47,7 +47,7 @@ message Categorisation {
 
 message Subscription {
     option (gorm.opts).ormable = true;
-    string id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "UUID()"}];
+    string id = 1 [(gorm.field).tag = {type: "varchar(36)" primary_key: true default: "(uuid())"}];
     string channel_youtube_id = 2;
     string user_id = 3;
     google.protobuf.Timestamp created_at = 12;
