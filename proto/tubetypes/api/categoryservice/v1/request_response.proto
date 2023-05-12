@@ -21,7 +21,7 @@ message ListCategoriesRequest {
 
 message ListCategoriesResponse {
     string next_page_token = 2;
-    repeated DescribeCategoryResponse categories = 1;
+    repeated tubetypes.api.category.v1.Category categories = 1;
 }
 
 message DescribeCategoryRequest {
@@ -39,4 +39,15 @@ message UpdateCategoryRequest {
 
 message UpdateCategoryResponse {
     tubetypes.api.category.v1.Category category = 1;
+}
+
+message SearchCategoriesRequest {
+    int32 page_size = 1;
+    string page_token = 2;
+    string query = 3;
+}
+
+message SearchCategoriesResponse {
+    repeated tubetypes.api.category.v1.Category categories = 1;
+    string next_page_token = 2;
 }
