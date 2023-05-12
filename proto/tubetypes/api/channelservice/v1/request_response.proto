@@ -125,3 +125,14 @@ message ListStaleChannelsResponse {
     string next_page_token = 1;
     repeated tubetypes.api.channel.v1.Channel channels = 2;
 }
+
+message SearchChannelsRequest {
+    int32 page_size = 1;
+    string page_token = 2;
+    string query = 3;
+}
+
+message SearchChannelsResponse {
+    string next_page_token = 1;
+    repeated tubetypes.api.channel.v1.Channel channels = 2;
+}

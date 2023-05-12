@@ -45,4 +45,7 @@ service ChannelService {
 
     rpc ListRandomCategorisations(ListRandomCategorisationsRequest) returns (ListRandomCategorisationsResponse) {
     }
+
+    rpc SearchChannels (SearchChannelsRequest) returns (SearchChannelsResponse) {
+    }
 }
