@@ -21,7 +21,7 @@ message ListChannelsRequest {
 
 message ListChannelsResponse {
     string next_page_token = 1;
-    repeated DescribeChannelResponse channels = 2;
+    repeated tubetypes.api.channel.v1.Channel channels = 2;
 }
 
 message ListRandomChannelsRequest {
@@ -31,7 +31,7 @@ message ListRandomChannelsRequest {
 
 message ListRandomChannelsResponse {
     string next_page_token = 1;
-    repeated DescribeChannelResponse channels = 2;
+    repeated tubetypes.api.channel.v1.Channel channels = 2;
 }
 
 message DescribeChannelRequest {
@@ -58,7 +58,7 @@ message ListChannelsByCategoryRequest {
 
 message ListChannelsByCategoryResponse {
     string next_page_token = 1;
-    repeated DescribeChannelResponse channels = 2;
+    repeated tubetypes.api.channel.v1.Channel channels = 2;
 }
 
 message AddChannelVideoRequest {
@@ -123,5 +123,5 @@ message ListStaleChannelsRequest {
 
 message ListStaleChannelsResponse {
     string next_page_token = 1;
-    repeated DescribeChannelResponse channels = 2;
+    repeated tubetypes.api.channel.v1.Channel channels = 2;
 }
