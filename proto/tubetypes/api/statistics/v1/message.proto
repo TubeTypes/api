@@ -22,9 +22,7 @@ message UserStatistics {
 message GlobalStatistics {
     option (gorm.opts).ormable = true;
     google.protobuf.Timestamp created_at = 1;
-    google.protobuf.Timestamp updated_at = 2;
-    google.protobuf.Timestamp deleted_at = 3;
 
-    tubetypes.api.category.v1.Category newest_category = 4  [(gorm.field).belongs_to = {}];
-    tubetypes.api.category.v1.Category hottest_category = 5  [(gorm.field).belongs_to = {}];
+    tubetypes.api.category.v1.Category newest_category = 2  [(gorm.field).belongs_to = {}];
+    tubetypes.api.category.v1.Category hottest_category = 3  [(gorm.field).belongs_to = {}];
 }
