@@ -11,3 +11,10 @@ message GetUserStatisticsRequest {
 message GetUserStatisticsResponse {
     tubetypes.api.statistics.v1.UserStatistics user_statistics = 1;
 }
+
+message GetGlobalStatisticsRequest {
+}
+
+message GetGlobalStatisticsResponse {
+    tubetypes.api.statistics.v1.GlobalStatistics global_statistics = 1;
+}

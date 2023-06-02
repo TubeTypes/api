@@ -18,3 +18,13 @@ message UserStatistics {
     tubetypes.api.category.v1.Category most_recently_subscribed_category = 6  [(gorm.field).belongs_to = {}];
     int32 total_distinct_categories = 7;
 }
+
+message GlobalStatistics {
+    option (gorm.opts).ormable = true;
+    google.protobuf.Timestamp created_at = 1;
+    google.protobuf.Timestamp updated_at = 2;
+    google.protobuf.Timestamp deleted_at = 3;
+
+    tubetypes.api.category.v1.Category newest_category = 4  [(gorm.field).belongs_to = {}];
+    tubetypes.api.category.v1.Category hottest_category = 5  [(gorm.field).belongs_to = {}];
+}

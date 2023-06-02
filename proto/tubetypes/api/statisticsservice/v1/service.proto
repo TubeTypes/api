@@ -9,4 +9,7 @@ import "tubetypes/api/statisticsservice/v1/request_response.proto";
 service StatisticsService {
     rpc GetUserStatistics(GetUserStatisticsRequest) returns (GetUserStatisticsResponse){
     }
+
+    rpc GetGlobalStatistics(GetGlobalStatisticsRequest) returns (GetGlobalStatisticsResponse){
+    }
 }
