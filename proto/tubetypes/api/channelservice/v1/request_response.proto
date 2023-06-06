@@ -24,16 +24,6 @@ message ListChannelsResponse {
     repeated tubetypes.api.channel.v1.Channel channels = 2;
 }
 
-message ListRandomChannelsRequest {
-    int32 page_size = 1;
-    string page_token = 2;
-}
-
-message ListRandomChannelsResponse {
-    string next_page_token = 1;
-    repeated tubetypes.api.channel.v1.Channel channels = 2;
-}
-
 message DescribeChannelRequest {
     string channel_id = 1;
 }

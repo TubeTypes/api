@@ -25,9 +25,6 @@ service ChannelService {
     rpc ListStaleChannels (ListStaleChannelsRequest) returns (ListStaleChannelsResponse) {
     }
 
-    rpc ListRandomChannels (ListRandomChannelsRequest) returns (ListRandomChannelsResponse) {
-    }
-
     rpc AddChannelVideo (AddChannelVideoRequest) returns (AddChannelVideoResponse) {
     }
 

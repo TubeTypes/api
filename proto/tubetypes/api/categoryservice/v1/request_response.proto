@@ -24,6 +24,16 @@ message ListCategoriesResponse {
     repeated tubetypes.api.category.v1.Category categories = 1;
 }
 
+message ListRandomCategoriesRequest {
+    int32 page_size = 1;
+    string page_token = 2;
+}
+
+message ListRandomCategoriesResponse {
+    string next_page_token = 2;
+    repeated tubetypes.api.category.v1.Category categories = 1;
+}
+
 message DescribeCategoryRequest {
     string category_id = 1;
 }
