@@ -94,7 +94,7 @@ message ListUserSubscriptionsRequest {
 
 message ListUserSubscriptionsResponse {
     string next_page_token = 1;
-    repeated tubetypes.api.channel.v1.Subscription subscriptions = 2;
+    repeated tubetypes.api.channel.v1.Channel channels = 2;
 }
 
 message ReplaceUserSubscriptionsRequest {
