@@ -38,6 +38,7 @@ message ChannelVideo {
     google.protobuf.Timestamp created_at = 7;
     google.protobuf.Timestamp updated_at = 8;
     google.protobuf.Timestamp deleted_at = 9;
+    tubetypes.api.channel.v1.Channel channel = 10 [(gorm.field).belongs_to = {}];
 }
 
 message Categorisation {
