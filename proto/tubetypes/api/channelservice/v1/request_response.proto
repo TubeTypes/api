@@ -67,7 +67,7 @@ message ListChannelVideosRequest {
 
 message ListChannelVideosResponse {
     string next_page_token = 1;
-    repeated tubetypes.api.channel.v1.ChannelVideo video = 2;
+    repeated tubetypes.api.channel.v1.ChannelVideo videos = 2;
 }
 
 message UpdateChannelRequest {
