@@ -59,6 +59,17 @@ message AddChannelVideoRequest {
 message AddChannelVideoResponse {
 }
 
+message ListChannelVideosRequest {
+    int32 page_size = 1;
+    string page_token = 2;
+    string channel_id = 3;
+}
+
+message ListChannelVideosResponse {
+    string next_page_token = 1;
+    repeated tubetypes.api.channel.v1.ChannelVideo video = 2;
+}
+
 message UpdateChannelRequest {
     tubetypes.api.channel.v1.Channel channel = 1;
     google.protobuf.FieldMask update_mask = 2;

@@ -28,6 +28,9 @@ service ChannelService {
     rpc AddChannelVideo (AddChannelVideoRequest) returns (AddChannelVideoResponse) {
     }
 
+    rpc ListChannelVideos (ListChannelVideosRequest) returns (ListChannelVideosResponse) {
+    }
+
     rpc UpdateChannel (UpdateChannelRequest) returns (UpdateChannelResponse) {
     }
 
