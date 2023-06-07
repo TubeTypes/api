@@ -19,7 +19,6 @@ message Channel {
     uint64 subscriber_count = 8;
     uint32 video_count = 9;
     tubetypes.api.category.v1.Category category = 10 [(gorm.field).belongs_to = {}];
-    repeated ChannelVideo previews = 11  [(gorm.field).has_many = {preload: true}]; 
     google.protobuf.Timestamp created_at = 12;
     google.protobuf.Timestamp updated_at = 13;
     google.protobuf.Timestamp deleted_at = 14;
