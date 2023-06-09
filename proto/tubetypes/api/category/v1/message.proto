@@ -4,6 +4,7 @@ package tubetypes.api.category.v1;
 
 import "protoc-gen-gorm/options/gorm.proto";
 import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
 
 message Category {
     option (gorm.opts).ormable = true;
@@ -14,5 +15,5 @@ message Category {
     google.protobuf.Timestamp created_at = 5;
     google.protobuf.Timestamp updated_at = 6;
     google.protobuf.Timestamp deleted_at = 7;
-    uint32 youtube_category = 8 [(gorm.field).tag = {unique: true}];
+    google.protobuf.Int32Value youtube_category = 8 [(gorm.field).tag = {unique: true}];
 }
