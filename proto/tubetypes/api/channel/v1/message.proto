@@ -34,7 +34,7 @@ message ChannelVideo {
     google.protobuf.Timestamp publish_time = 3;
     string title = 4;
     uint64 views = 5;
-    string youtube_category_id = 6;
+    uint32 youtube_category_id = 6;
     google.protobuf.Timestamp created_at = 7;
     google.protobuf.Timestamp updated_at = 8;
     google.protobuf.Timestamp deleted_at = 9;
