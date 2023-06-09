@@ -43,6 +43,7 @@ message ChannelVideo {
 
 message Categorisation {
     tubetypes.api.channel.v1.Channel channel = 1;
+    tubetypes.api.category.v1.Category category_guess = 2;
 }
 
 message Subscription {
