@@ -5,7 +5,7 @@ $(VERBOSE).SILENT:
 ci-build: install proto
 
 # Install dependencies.
-install: grpc-install api-linter-install buf-install
+install: grpc-install api-linter-install buf-install protoc-gen-gorm-install
 
 # Run all linters and compile proto files.
 proto: grpc
@@ -17,7 +17,6 @@ GOPATH := $(shell go env GOPATH)
 endif
 
 GOBIN := $(if $(shell go env GOBIN),$(shell go env GOBIN),$(GOPATH)/bin)
-SHELL := PATH=$(GOBIN):$(PATH) /bin/sh
 
 COLOR := "\e[1;36m%s\e[0m\n"
 
@@ -35,7 +34,7 @@ grpc: buf-lint buf-generate
 grpc-install: buf-install api-linter-install
 
 .PHONY: buf-generate
-buf-generate:
+buf-generate: install
 	printf $(COLOR) "Run buf generate..."
 	(cd $(PROTO_ROOT) && buf generate)
 
@@ -46,11 +45,11 @@ api-linter-install:
 
 buf-install:
 	printf $(COLOR) "Install/update buf..."
-	go install github.com/bufbuild/buf/cmd/buf@v1.14.0
+	go install github.com/bufbuild/buf/cmd/buf@v1.37.0
 
 protoc-gen-gorm-install:
 	printf $(COLOR) "Install/update protoc-gen-gorm..."
-	go install github.com/infobloxopen/protoc-gen-gorm@cedaaf0105d24596b9987100c864b1021d362519
+	go install github.com/infobloxopen/protoc-gen-gorm@c61100d0ceea3f9326c312825a1599d968e21eed
 
 ##### Linters #####
 api-linter:
@@ -62,8 +61,8 @@ buf-lint:
 	(cd $(PROTO_ROOT) && buf lint)
 
 buf-breaking:
-	@printf $(COLOR) "Run buf breaking changes check against main branch..."	
-	@(cd $(PROTO_ROOT) && buf breaking --against '.git#branch=main')
+	printf $(COLOR) "Run buf breaking changes check against main branch..."	
+	(cd $(PROTO_ROOT) && buf breaking --against '.git#branch=main')
 
 ##### Clean #####
 clean:
