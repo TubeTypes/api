@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package tubetypes.api.scraper.v1;
+
+import "google/protobuf/timestamp.proto";
+import "protoc-gen-gorm/options/gorm.proto";
+
+enum ScrapeState {
+    SCRAPE_STATE_UNSPECIFIED = 0;
+    SCRAPE_STATE_STARTED = 1;
+    SCRAPE_STATE_FINISHED = 2;
+    SCRAPE_STATE_ERROR = 3;
+}
+
+message UserScrapeTask {
+    option (gorm.opts).ormable = true;
+    string id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "gen_random_uuid()"}];
+    string user_id = 2;
+    google.protobuf.Timestamp created_at = 3;
+    google.protobuf.Timestamp started_at = 4;
+    google.protobuf.Timestamp finished_at = 5;
+    ScrapeState state = 6;
+}

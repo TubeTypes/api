@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package tubetypes.api.scraperservice.v1;
+
+import "tubetypes/api/scraperservice/v1/request_response.proto";
+
+// ScraperService API defines how TubeTypes interacts with the service that runs
+// the YouTube scraping
+service ScraperService {
+
+    rpc GetLatestNonErrorTask (GetLatestNonErrorTaskRequest) returns (GetLatestNonErrorTaskResponse) {
+    }
+
+}

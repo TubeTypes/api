@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package tubetypes.api.scraperservice.v1;
+
+import "tubetypes/api/scraper/v1/message.proto";
+
+message GetLatestNonErrorTaskRequest {
+    string user_id = 1;
+}
+
+message GetLatestNonErrorTaskResponse {
+    tubetypes.api.scraper.v1.UserScrapeTask scrape = 1;
+}
