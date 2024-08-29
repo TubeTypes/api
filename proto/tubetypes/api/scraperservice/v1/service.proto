@@ -8,7 +8,7 @@ import "tubetypes/api/scraperservice/v1/request_response.proto";
 // the YouTube scraping
 service ScraperService {
 
-    rpc GetLatestNonErrorTask (GetLatestNonErrorTaskRequest) returns (GetLatestNonErrorTaskResponse) {
+    rpc GetLatestTask (GetLatestTaskRequest) returns (GetLatestTaskResponse) {
     }
 
 }

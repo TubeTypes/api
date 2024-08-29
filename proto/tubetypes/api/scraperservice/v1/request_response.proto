@@ -4,10 +4,11 @@ package tubetypes.api.scraperservice.v1;
 
 import "tubetypes/api/scraper/v1/message.proto";
 
-message GetLatestNonErrorTaskRequest {
+message GetLatestTaskRequest {
     string user_id = 1;
+    optional tubetypes.api.scraper.v1.ScrapeState state = 2;
 }
 
-message GetLatestNonErrorTaskResponse {
+message GetLatestTaskResponse {
     tubetypes.api.scraper.v1.UserScrapeTask scrape = 1;
 }
