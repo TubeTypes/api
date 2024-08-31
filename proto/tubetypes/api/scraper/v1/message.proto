@@ -17,7 +17,6 @@ message UserScrapeTask {
     string id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "gen_random_uuid()"}];
     string user_id = 2;
     google.protobuf.Timestamp created_at = 3;
-    google.protobuf.Timestamp started_at = 4;
-    google.protobuf.Timestamp finished_at = 5;
-    ScrapeState state = 6;
+    google.protobuf.Timestamp finished_at = 4;
+    ScrapeState state = 5;
 }
