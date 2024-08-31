@@ -70,9 +70,17 @@ message ListChannelVideosResponse {
     repeated tubetypes.api.channel.v1.ChannelVideo videos = 2;
 }
 
-message UpdateChannelRequest {
+message PatchChannelRequest {
     tubetypes.api.channel.v1.Channel channel = 1;
     google.protobuf.FieldMask update_mask = 2;
+}
+
+message PatchChannelResponse {
+    tubetypes.api.channel.v1.Channel channel = 1;
+}
+
+message UpdateChannelRequest {
+    tubetypes.api.channel.v1.Channel channel = 1;
 }
 
 message UpdateChannelResponse {
