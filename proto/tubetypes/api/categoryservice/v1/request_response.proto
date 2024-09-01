@@ -27,6 +27,7 @@ message ListCategoriesResponse {
 message ListRandomCategoriesRequest {
     int32 page_size = 1;
     string page_token = 2;
+    bool has_channels = 3;
 }
 
 message ListRandomCategoriesResponse {
