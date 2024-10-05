@@ -29,6 +29,7 @@ message ListPendingAffirmativeVotesRequest {
 message ListPendingAffirmativeVotesResponse {
     AffirmativeVoteList pending_votes = 1;
     string next_page_token = 2;
+    int64 total_items = 3;
 }
 
 message ListPendingNoCategoryVotesRequest {
@@ -39,4 +40,5 @@ message ListPendingNoCategoryVotesRequest {
 message ListPendingNoCategoryVotesResponse {
     NoCategoryVoteList pending_votes = 1;
     string next_page_token = 2;
+    int64 total_items = 3;
 }

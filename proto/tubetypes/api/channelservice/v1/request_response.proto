@@ -22,6 +22,7 @@ message ListChannelsRequest {
 message ListChannelsResponse {
     string next_page_token = 1;
     repeated tubetypes.api.channel.v1.Channel channels = 2;
+    int64 total_items = 3;
 }
 
 message DescribeChannelRequest {
@@ -49,6 +50,7 @@ message ListChannelsByCategoryRequest {
 message ListChannelsByCategoryResponse {
     string next_page_token = 1;
     repeated tubetypes.api.channel.v1.Channel channels = 2;
+    int64 total_items = 3;
 }
 
 message AddChannelVideoRequest {
@@ -68,6 +70,7 @@ message ListChannelVideosRequest {
 message ListChannelVideosResponse {
     string next_page_token = 1;
     repeated tubetypes.api.channel.v1.ChannelVideo videos = 2;
+    int64 total_items = 3;
 }
 
 message PatchChannelRequest {
@@ -114,6 +117,7 @@ message ListUserSubscriptionsRequest {
 message ListUserSubscriptionsResponse {
     string next_page_token = 1;
     repeated tubetypes.api.channel.v1.Channel channels = 2;
+    int64 total_items = 3;
 }
 
 message ReplaceUserSubscriptionsRequest {
@@ -133,6 +137,7 @@ message ListStaleChannelsRequest {
 message ListStaleChannelsResponse {
     string next_page_token = 1;
     repeated tubetypes.api.channel.v1.Channel channels = 2;
+    int64 total_items = 3;
 }
 
 message SearchChannelsRequest {
@@ -144,4 +149,5 @@ message SearchChannelsRequest {
 message SearchChannelsResponse {
     string next_page_token = 1;
     repeated tubetypes.api.channel.v1.Channel channels = 2;
+    int64 total_items = 3;
 }
