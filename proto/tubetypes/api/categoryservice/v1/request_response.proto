@@ -34,7 +34,6 @@ message ListRandomCategoriesRequest {
 message ListRandomCategoriesResponse {
     repeated tubetypes.api.category.v1.Category categories = 1;
     string next_page_token = 2;
-    int64 total_items = 3;
 }
 
 message DescribeCategoryRequest {
