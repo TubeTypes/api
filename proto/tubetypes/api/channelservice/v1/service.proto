@@ -16,6 +16,9 @@ service ChannelService {
     rpc DescribeChannelByYoutubeID (DescribeChannelByYoutubeIDRequest) returns (DescribeChannelByYoutubeIDResponse) {
     }
 
+    rpc DescribeChannelByUsername (DescribeChannelByUsernameRequest) returns (DescribeChannelByUsernameResponse) {
+    }
+
     rpc ListChannels (ListChannelsRequest) returns (ListChannelsResponse) {
     }
 

@@ -25,7 +25,7 @@ message Channel {
 
     string country = 15;
     google.protobuf.Timestamp terminated_at = 16;
-    string custom_url = 17;
+    string username = 17;
 }
 
 message ChannelVideo {
