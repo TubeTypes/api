@@ -46,10 +46,18 @@ message DescribeCategoryResponse {
 
 message UpdateCategoryRequest {
     tubetypes.api.category.v1.Category category = 1;
-    google.protobuf.FieldMask update_mask = 2;
 }
 
 message UpdateCategoryResponse {
+    tubetypes.api.category.v1.Category category = 1;
+}
+
+message PatchCategoryRequest {
+    tubetypes.api.category.v1.Category category = 1;
+    google.protobuf.FieldMask update_mask = 2;
+}
+
+message PatchCategoryResponse {
     tubetypes.api.category.v1.Category category = 1;
 }
 
