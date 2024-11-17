@@ -26,6 +26,7 @@ message Channel {
     string country = 15;
     google.protobuf.Timestamp terminated_at = 16;
     string username = 17 [(gorm.field).tag = {unique: true}];
+    string description = 18;
 }
 
 message ChannelVideo {
