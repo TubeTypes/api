@@ -53,6 +53,7 @@ message ListChannelsByCategoryRequest {
     int32 page_size = 1;
     string page_token = 2;
     string category_id = 3;
+    bool include_subcategories = 4;
 }
 
 message ListChannelsByCategoryResponse {
