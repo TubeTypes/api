@@ -15,4 +15,7 @@ service CategorisationService {
 
     rpc ListPendingNoCategoryVotes(ListPendingNoCategoryVotesRequest) returns (ListPendingNoCategoryVotesResponse) {
     }
+
+    rpc GetAICategorySuggestions(GetAICategorySuggestionsRequest) returns (GetAICategorySuggestionsResponse) {
+    }
 }

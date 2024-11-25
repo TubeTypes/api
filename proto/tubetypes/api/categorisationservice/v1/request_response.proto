@@ -43,10 +43,10 @@ message ListPendingNoCategoryVotesResponse {
     int64 total_items = 3;
 }
 
-message GetAISuggestedCategoryRequest {
+message GetAICategorySuggestionsResponse {
     string channel_id = 1;
 }
 
-message GetAISuggestedCategoryResponse {
-    repeated tubetypes.api.categorisation.v1.AISuggestedCategory suggested_category = 1;
+message GetAICategorySuggestionsRequest {
+    repeated tubetypes.api.categorisation.v1.AISuggestedCategory suggested_categories = 1;
 }
