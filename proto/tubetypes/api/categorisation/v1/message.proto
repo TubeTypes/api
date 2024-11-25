@@ -24,3 +24,31 @@ message NoCategoryVote {
     google.protobuf.StringValue suggestion = 4;
     google.protobuf.Timestamp created_at = 5;
 }
+
+message AISuggestedCategory {
+    option (gorm.opts).ormable = true;
+    string id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "gen_random_uuid()"}];
+    string channel_id = 2;
+    string task_id = 3;
+    string suggested_category_id = 4;
+    double confidence = 5;
+    string reason = 6;
+    google.protobuf.Timestamp created_at = 7;
+    google.protobuf.Timestamp updated_at = 8;
+}
+
+enum AISuggestionScrapeState {
+    AI_SUGGESTION_SCRAPE_STATE_UNSPECIFIED = 0;
+    AI_SUGGESTION_SCRAPE_STATE_STARTED = 1;
+    AI_SUGGESTION_SCRAPE_STATE_FINISHED = 2;
+    AI_SUGGESTION_SCRAPE_STATE_ERROR = 3;
+}
+
+message AISuggestionScrapeTask {
+    option (gorm.opts).ormable = true;
+    string id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "gen_random_uuid()"}];
+    string channel_id = 2;
+    AISuggestionScrapeState state = 3;
+    google.protobuf.Timestamp created_at = 4;
+    google.protobuf.Timestamp finished_at = 5;
+}

@@ -42,3 +42,11 @@ message ListPendingNoCategoryVotesResponse {
     string next_page_token = 2;
     int64 total_items = 3;
 }
+
+message GetAISuggestedCategoryRequest {
+    string channel_id = 1;
+}
+
+message GetAISuggestedCategoryResponse {
+    repeated tubetypes.api.categorisation.v1.AISuggestedCategory suggested_category = 1;
+}
