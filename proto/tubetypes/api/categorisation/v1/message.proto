@@ -52,3 +52,28 @@ message AISuggestionScrapeTask {
     google.protobuf.Timestamp created_at = 4;
     google.protobuf.Timestamp finished_at = 5;
 }
+
+message AffirmativeVoteList {
+    repeated tubetypes.api.categorisation.v1.AffirmativeVote affirmative_votes = 1;
+}
+
+message NoCategoryVoteList {
+    repeated tubetypes.api.categorisation.v1.NoCategoryVote no_category_votes = 1;
+}
+
+message CategorizationSession {
+    option (gorm.opts).ormable = true;
+    string id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "gen_random_uuid()"}];
+    string user_id = 2 [(gorm.field).tag = {unique_index: "unique_session_user"}];
+    google.protobuf.Timestamp created_at = 3;
+    google.protobuf.Timestamp expires_at = 4;
+}
+
+message CategorizationSessionChannel {
+    option (gorm.opts).ormable = true;
+    string id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "gen_random_uuid()"}];
+    CategorizationSession session = 2 [(gorm.field).belongs_to = {}];
+    string channel_id = 3;
+    google.protobuf.Timestamp created_at = 4;
+    google.protobuf.Timestamp expires_at = 5;
+}

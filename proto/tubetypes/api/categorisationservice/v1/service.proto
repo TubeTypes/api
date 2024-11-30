@@ -18,4 +18,16 @@ service CategorisationService {
 
     rpc GetAICategorySuggestions(GetAICategorySuggestionsRequest) returns (GetAICategorySuggestionsResponse) {
     }
+
+    rpc GetNextCategorization(GetNextCategorizationRequest) returns (GetNextCategorizationResponse) {
+    }
+
+    rpc SubmitAffirmativeVote(SubmitAffirmativeVoteRequest) returns (SubmitAffirmativeVoteResponse) {
+    }
+
+    rpc SubmitNoCategoryVote(SubmitNoCategoryVoteRequest) returns (SubmitNoCategoryVoteResponse) {
+    }
+
+    rpc SkipCategorization(SkipCategorizationRequest) returns (SkipCategorizationResponse) {
+    }
 }

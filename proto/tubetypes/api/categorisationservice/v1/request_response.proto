@@ -13,21 +13,13 @@ message GetUserStatisticsResponse {
     int32 total_no_category_votes = 2;
 }
 
-message AffirmativeVoteList {
-    repeated tubetypes.api.categorisation.v1.AffirmativeVote affirmative_votes = 1;
-}
-
-message NoCategoryVoteList {
-    repeated tubetypes.api.categorisation.v1.NoCategoryVote no_category_votes = 1;
-}
-
 message ListPendingAffirmativeVotesRequest {
     int32 page_size = 1;
     string page_token = 2;
 }
 
 message ListPendingAffirmativeVotesResponse {
-    AffirmativeVoteList pending_votes = 1;
+    tubetypes.api.categorisation.v1.AffirmativeVoteList pending_votes = 1;
     string next_page_token = 2;
     int64 total_items = 3;
 }
@@ -38,7 +30,7 @@ message ListPendingNoCategoryVotesRequest {
 }
 
 message ListPendingNoCategoryVotesResponse {
-    NoCategoryVoteList pending_votes = 1;
+    tubetypes.api.categorisation.v1.NoCategoryVoteList pending_votes = 1;
     string next_page_token = 2;
     int64 total_items = 3;
 }
@@ -50,3 +42,29 @@ message GetAICategorySuggestionsRequest {
 message GetAICategorySuggestionsResponse {
     repeated tubetypes.api.categorisation.v1.AISuggestedCategory suggested_categories = 1;
 }
+
+message GetNextCategorizationRequest {
+    string user_id = 1;
+}
+
+message GetNextCategorizationResponse {
+    string channel_id = 1;
+}
+
+message SubmitAffirmativeVoteRequest {
+    tubetypes.api.categorisation.v1.AffirmativeVote vote = 1;
+}
+
+message SubmitAffirmativeVoteResponse {}
+
+message SubmitNoCategoryVoteRequest {
+    tubetypes.api.categorisation.v1.NoCategoryVote vote = 1;
+}
+
+message SubmitNoCategoryVoteResponse {}
+
+message SkipCategorizationRequest {
+    string channel_id = 1;
+}
+
+message SkipCategorizationResponse {}
