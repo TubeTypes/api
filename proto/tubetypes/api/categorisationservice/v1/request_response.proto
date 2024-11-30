@@ -62,7 +62,7 @@ message SubmitAffirmativeVoteResponse {}
 message SubmitNoCategoryVoteRequest {
     string user_id = 1;
     string channel_id = 2;
-    string suggestion = 3;
+    optional string suggestion = 3;
 }
 
 message SubmitNoCategoryVoteResponse {}
