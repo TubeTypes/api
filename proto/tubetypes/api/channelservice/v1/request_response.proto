@@ -106,12 +106,17 @@ message DeleteChannelRequest {
 message DeleteChannelResponse {
 }
 
+
+// deprecated
+// TODO: Delete
 message ListRandomCategorisationsRequest {
     int32 page_size = 1;
     string page_token = 2;
     string user_id = 3;
 }
 
+// deprecated
+// TODO: Delete
 message ListRandomCategorisationsResponse {
     string next_page_token = 1;
     repeated tubetypes.api.channel.v1.Categorisation categorisations = 2;
@@ -156,6 +161,18 @@ message SearchChannelsRequest {
 }
 
 message SearchChannelsResponse {
+    string next_page_token = 1;
+    repeated tubetypes.api.channel.v1.Channel channels = 2;
+    int64 total_items = 3;
+}
+
+message ListUncategorizedSubscriptionsRequest {
+    int32 page_size = 1;
+    string page_token = 2;
+    string user_id = 3;
+}
+
+message ListUncategorizedSubscriptionsResponse {
     string next_page_token = 1;
     repeated tubetypes.api.channel.v1.Channel channels = 2;
     int64 total_items = 3;

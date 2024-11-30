@@ -49,9 +49,14 @@ service ChannelService {
     rpc ReplaceUserSubscriptions (ReplaceUserSubscriptionsRequest) returns (ReplaceUserSubscriptionsResponse) {
     }
 
+    // deprecated
+    // TODO: delete
     rpc ListRandomCategorisations(ListRandomCategorisationsRequest) returns (ListRandomCategorisationsResponse) {
     }
 
     rpc SearchChannels (SearchChannelsRequest) returns (SearchChannelsResponse) {
+    }
+
+    rpc ListUncategorizedSubscriptions (ListUncategorizedSubscriptionsRequest) returns (ListUncategorizedSubscriptionsResponse){
     }
 }
