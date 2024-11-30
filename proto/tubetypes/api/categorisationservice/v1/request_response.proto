@@ -52,13 +52,17 @@ message GetNextCategorizationResponse {
 }
 
 message SubmitAffirmativeVoteRequest {
-    tubetypes.api.categorisation.v1.AffirmativeVote vote = 1;
+    string user_id = 1;
+    string channel_id = 2;
+    string category_id = 3;
 }
 
 message SubmitAffirmativeVoteResponse {}
 
 message SubmitNoCategoryVoteRequest {
-    tubetypes.api.categorisation.v1.NoCategoryVote vote = 1;
+    string user_id = 1;
+    string channel_id = 2;
+    string suggestion = 3;
 }
 
 message SubmitNoCategoryVoteResponse {}
