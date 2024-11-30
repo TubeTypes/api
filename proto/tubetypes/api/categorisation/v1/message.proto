@@ -75,5 +75,4 @@ message CategorizationSessionChannel {
     CategorizationSession session = 2 [(gorm.field).belongs_to = {}];
     string channel_id = 3;
     google.protobuf.Timestamp created_at = 4;
-    google.protobuf.Timestamp expires_at = 5;
 }
