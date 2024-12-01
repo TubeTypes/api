@@ -73,3 +73,10 @@ message SkipCategorizationRequest {
 }
 
 message SkipCategorizationResponse {}
+
+message ApproveAffirmativeVoteRequest {
+    string channel_id = 1;
+    string category_id = 2;
+}
+
+message ApproveAffirmativeVoteResponse {}

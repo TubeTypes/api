@@ -30,4 +30,7 @@ service CategorisationService {
 
     rpc SkipCategorization(SkipCategorizationRequest) returns (SkipCategorizationResponse) {
     }
+
+    rpc ApproveAffirmativeVote(ApproveAffirmativeVoteRequest) returns (ApproveAffirmativeVoteResponse) {
+    }
 }
