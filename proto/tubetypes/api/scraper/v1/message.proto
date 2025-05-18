@@ -23,8 +23,8 @@ message UserScrapeTask {
 
 enum ChannelScrapeResult {
     CHANNEL_SCRAPE_RESULT_UNSPECIFIED = 0;
-    CHANNEL_SCRAPE_RESULT_INCLUDED = 1;
-    CHANNEL_SCRAPE_RESULT_FILTERED_OUT = 2;
+    CHANNEL_SCRAPE_RESULT_VALID = 1;
+    CHANNEL_SCRAPE_RESULT_INVALID = 2;
 }
 
 message ChannelScrapeTask {
