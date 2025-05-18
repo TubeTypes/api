@@ -11,6 +11,6 @@ service ScraperService {
     rpc GetLatestTask (GetLatestTaskRequest) returns (GetLatestTaskResponse) {
     }
 
-    rpc GetChannelScrape (GetChannelScrapeRequest) returns (GetChannelScrapeResponse) {
+    rpc GetChannelScrapeTask (GetChannelScrapeTaskRequest) returns (GetChannelScrapeTaskResponse) {
     }
 }

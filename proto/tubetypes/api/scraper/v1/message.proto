@@ -21,15 +21,15 @@ message UserScrapeTask {
     ScrapeState state = 5;
 }
 
-enum ChannelScrapeStatus {
-    CHANNEL_SCRAPE_STATUS_UNSPECIFIED = 0;
-    CHANNEL_SCRAPE_STATUS_INCLUDED = 1;
-    CHANNEL_SCRAPE_STATUS_FILTERED_OUT = 2;
+enum ChannelScrapeResult {
+    CHANNEL_SCRAPE_RESULT_UNSPECIFIED = 0;
+    CHANNEL_SCRAPE_RESULT_INCLUDED = 1;
+    CHANNEL_SCRAPE_RESULT_FILTERED_OUT = 2;
 }
 
-message ChannelScrape {
+message ChannelScrapeTask {
     option (gorm.opts).ormable = true;
     string channel_username = 1 [(gorm.field).tag = {primary_key: true}];
-    ChannelScrapeStatus status = 2;
+    ChannelScrapeResult result = 2;
     google.protobuf.Timestamp created_at = 3;
 }

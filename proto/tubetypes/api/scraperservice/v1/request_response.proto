@@ -13,10 +13,10 @@ message GetLatestTaskResponse {
     tubetypes.api.scraper.v1.UserScrapeTask scrape = 1;
 }
 
-message GetChannelScrapeRequest {
-    string channel_username = 2;
+message GetChannelScrapeTaskRequest {
+    string channel_username = 1;
 }
 
-message GetChannelScrapeResponse {
-    tubetypes.api.scraper.v1.ChannelScrape scrape = 1;
+message GetChannelScrapeTaskResponse {
+    tubetypes.api.scraper.v1.ChannelScrapeTask scrape = 1;
 }
