@@ -20,3 +20,16 @@ message UserScrapeTask {
     google.protobuf.Timestamp finished_at = 4;
     ScrapeState state = 5;
 }
+
+enum ChannelScrapeStatus {
+    CHANNEL_SCRAPE_STATUS_UNSPECIFIED = 0;
+    CHANNEL_SCRAPE_STATUS_INCLUDED = 1;
+    CHANNEL_SCRAPE_STATUS_FILTERED_OUT = 2;
+}
+
+message ChannelScrape {
+    option (gorm.opts).ormable = true;
+    string channel_username = 1 [(gorm.field).tag = {primary_key: true}];
+    ChannelScrapeStatus status = 2;
+    google.protobuf.Timestamp created_at = 3;
+}
