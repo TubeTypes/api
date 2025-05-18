@@ -30,6 +30,7 @@ enum ChannelScrapeResult {
 message ChannelScrapeTask {
     option (gorm.opts).ormable = true;
     string channel_username = 1 [(gorm.field).tag = {primary_key: true}];
-    ChannelScrapeResult result = 2;
-    google.protobuf.Timestamp created_at = 3;
+    string channel_youtube_id = 2;
+    ChannelScrapeResult result = 3;
+    google.protobuf.Timestamp created_at = 4;
 }
