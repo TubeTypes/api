@@ -25,14 +25,25 @@ message NoCategoryVote {
     google.protobuf.Timestamp created_at = 5;
 }
 
-message AISuggestedCategory {
+message AISuggestedAffirmativeVote {
     option (gorm.opts).ormable = true;
     string id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "gen_random_uuid()"}];
     string channel_id = 2;
     string task_id = 3;
     string suggested_category_id = 4;
     double confidence = 5;
-    string reason = 6;
+    google.protobuf.Timestamp created_at = 6;
+    google.protobuf.Timestamp updated_at = 7;
+}
+
+message AISuggestedNoCategoryVote {
+    option (gorm.opts).ormable = true;
+    string id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "gen_random_uuid()"}];
+    string channel_id = 2;
+    string task_id = 3;
+    string suggested_name = 4;
+    string suggested_path = 5;
+    double confidence = 6;
     google.protobuf.Timestamp created_at = 7;
     google.protobuf.Timestamp updated_at = 8;
 }
