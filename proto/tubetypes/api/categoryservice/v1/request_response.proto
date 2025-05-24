@@ -44,6 +44,14 @@ message DescribeCategoryResponse {
     tubetypes.api.category.v1.Category category = 1;
 }
 
+message DescribeCategoryByNameRequest {
+    string name = 1;
+}
+
+message DescribeCategoryByNameResponse {
+    tubetypes.api.category.v1.Category category = 1;
+}
+
 message UpdateCategoryRequest {
     tubetypes.api.category.v1.Category category = 1;
 }

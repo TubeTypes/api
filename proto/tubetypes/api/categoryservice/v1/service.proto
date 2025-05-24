@@ -13,6 +13,9 @@ service CategoryService {
     rpc DescribeCategory(DescribeCategoryRequest) returns (DescribeCategoryResponse) {
     }
 
+    rpc DescribeCategoryByName(DescribeCategoryByNameRequest) returns (DescribeCategoryByNameResponse) {
+    }
+
     rpc ListCategories (ListCategoriesRequest) returns (ListCategoriesResponse) {
     }
 
