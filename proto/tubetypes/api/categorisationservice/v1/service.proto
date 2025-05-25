@@ -30,4 +30,10 @@ service CategorisationService {
 
     rpc ApproveAffirmativeVote(ApproveAffirmativeVoteRequest) returns (ApproveAffirmativeVoteResponse) {
     }
+
+    rpc ListAISuggestedAffirmativeVotes(ListAISuggestedAffirmativeVotesRequest) returns (ListAISuggestedAffirmativeVotesResponse) {
+    }
+
+    rpc ListAISuggestedNoCategoryVotes(ListAISuggestedNoCategoryVotesRequest) returns (ListAISuggestedNoCategoryVotesResponse) {
+    }
 }

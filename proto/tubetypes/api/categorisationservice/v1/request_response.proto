@@ -72,3 +72,25 @@ message ApproveAffirmativeVoteRequest {
 }
 
 message ApproveAffirmativeVoteResponse {}
+
+message ListAISuggestedAffirmativeVotesRequest {
+    int32 page_size = 1;
+    string page_token = 2;
+}
+
+message ListAISuggestedAffirmativeVotesResponse {
+    string next_page_token = 1;
+    repeated tubetypes.api.categorisation.v1.AISuggestedAffirmativeVote pending_votes = 2;
+    int64 total_items = 3;
+}
+
+message ListAISuggestedNoCategoryVotesRequest {
+    int32 page_size = 1;
+    string page_token = 2;
+}
+
+message ListAISuggestedNoCategoryVotesResponse {
+    string next_page_token = 1;
+    repeated tubetypes.api.categorisation.v1.AISuggestedNoCategoryVote pending_votes = 2;
+    int64 total_items = 3;
+}
