@@ -94,3 +94,15 @@ message ListAISuggestedNoCategoryVotesResponse {
     repeated tubetypes.api.categorisation.v1.AISuggestedNoCategoryVote votes = 2;
     int64 total_items = 3;
 }
+
+message ListAISuggestedAffirmativeVotesByYoutubeIDRequest {
+    int32 page_size = 1;
+    string page_token = 2;
+    string youtube_id = 3;
+}
+
+message ListAISuggestedAffirmativeVotesByYoutubeIDResponse {
+    string next_page_token = 1;
+    repeated tubetypes.api.categorisation.v1.AISuggestedAffirmativeVote votes = 2;
+    int64 total_items = 3;
+}

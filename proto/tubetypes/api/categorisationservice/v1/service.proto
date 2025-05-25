@@ -36,4 +36,7 @@ service CategorisationService {
 
     rpc ListAISuggestedNoCategoryVotes(ListAISuggestedNoCategoryVotesRequest) returns (ListAISuggestedNoCategoryVotesResponse) {
     }
+
+    rpc ListAISuggestedAffirmativeVotesByYoutubeID(ListAISuggestedAffirmativeVotesByYoutubeIDRequest) returns (ListAISuggestedAffirmativeVotesByYoutubeIDResponse) {
+    }
 }
