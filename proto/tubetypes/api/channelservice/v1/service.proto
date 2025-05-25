@@ -37,6 +37,9 @@ service ChannelService {
     rpc UpdateChannel (UpdateChannelRequest) returns (UpdateChannelResponse) {
     }
 
+    rpc UpdateChannelCategory (UpdateChannelCategoryRequest) returns (UpdateChannelCategoryResponse) {
+    }
+
     rpc PatchChannel (PatchChannelRequest) returns (PatchChannelResponse) {
     }
 
