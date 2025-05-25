@@ -99,12 +99,12 @@ message UpdateChannelResponse {
     tubetypes.api.channel.v1.Channel channel = 1;
 }
 
-message UpdateChannelCategoryRequest {
+message PatchChannelCategoryRequest {
     string channel_id = 1;
     string category_id = 2;
 }
 
-message UpdateChannelCategoryResponse {
+message PatchChannelCategoryResponse {
     tubetypes.api.channel.v1.Channel channel = 1;
 }
 
