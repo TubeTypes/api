@@ -80,7 +80,7 @@ message ListAISuggestedAffirmativeVotesRequest {
 
 message ListAISuggestedAffirmativeVotesResponse {
     string next_page_token = 1;
-    repeated tubetypes.api.categorisation.v1.AISuggestedAffirmativeVote pending_votes = 2;
+    repeated tubetypes.api.categorisation.v1.AISuggestedAffirmativeVote votes = 2;
     int64 total_items = 3;
 }
 
@@ -91,6 +91,6 @@ message ListAISuggestedNoCategoryVotesRequest {
 
 message ListAISuggestedNoCategoryVotesResponse {
     string next_page_token = 1;
-    repeated tubetypes.api.categorisation.v1.AISuggestedNoCategoryVote pending_votes = 2;
+    repeated tubetypes.api.categorisation.v1.AISuggestedNoCategoryVote votes = 2;
     int64 total_items = 3;
 }
