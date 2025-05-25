@@ -99,15 +99,6 @@ message UpdateChannelResponse {
     tubetypes.api.channel.v1.Channel channel = 1;
 }
 
-message PatchChannelCategoryRequest {
-    string channel_id = 1;
-    string category_id = 2;
-}
-
-message PatchChannelCategoryResponse {
-    tubetypes.api.channel.v1.Channel channel = 1;
-}
-
 message DeleteChannelRequest {
     string channel_id = 1;
 }
