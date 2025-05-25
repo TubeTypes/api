@@ -41,6 +41,7 @@ message ChannelVideo {
     google.protobuf.Timestamp updated_at = 8;
     google.protobuf.Timestamp deleted_at = 9;
     tubetypes.api.channel.v1.Channel channel = 10 [(gorm.field).belongs_to = {}];
+    string description = 11;
 }
 
 // deprecated
