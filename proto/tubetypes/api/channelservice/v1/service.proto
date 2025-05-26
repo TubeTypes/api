@@ -2,56 +2,23 @@ syntax = "proto3";
 
 package tubetypes.api.channelservice.v1;
 
-import "tubetypes/api/channelservice/v1/request_response.proto";
+import "tubetypes/api/channelservice/v1/channels.proto";
+import "tubetypes/api/channelservice/v1/subscriptions.proto";
+import "tubetypes/api/channelservice/v1/videos.proto";
 
 // ChannelService API defines how TubeTypes interacts with the channels
 service ChannelService {
+  rpc CreateChannel (CreateChannelRequest) returns (CreateChannelResponse);
+  rpc DescribeChannel (DescribeChannelRequest) returns (DescribeChannelResponse);
+  rpc ListChannels (ListChannelsRequest) returns (ListChannelsResponse);
+  rpc UpdateChannel (UpdateChannelRequest) returns (UpdateChannelResponse);
+  rpc PatchChannel (PatchChannelRequest) returns (PatchChannelResponse);
+  rpc DeleteChannel (DeleteChannelRequest) returns (DeleteChannelResponse);
+  rpc SearchChannels (SearchChannelsRequest) returns (SearchChannelsResponse);
 
-    rpc CreateChannel (CreateChannelRequest) returns (CreateChannelResponse) {
-    }
+  rpc AddChannelVideo (AddChannelVideoRequest) returns (AddChannelVideoResponse);
+  rpc ListChannelVideos (ListChannelVideosRequest) returns (ListChannelVideosResponse);
 
-    rpc DescribeChannel (DescribeChannelRequest) returns (DescribeChannelResponse) {
-    }
-
-    rpc DescribeChannelByYoutubeID (DescribeChannelByYoutubeIDRequest) returns (DescribeChannelByYoutubeIDResponse) {
-    }
-
-    rpc DescribeChannelByUsername (DescribeChannelByUsernameRequest) returns (DescribeChannelByUsernameResponse) {
-    }
-
-    rpc ListChannels (ListChannelsRequest) returns (ListChannelsResponse) {
-    }
-
-    rpc ListChannelsByCategory (ListChannelsByCategoryRequest) returns (ListChannelsByCategoryResponse) {
-    }
-
-    rpc ListStaleChannels (ListStaleChannelsRequest) returns (ListStaleChannelsResponse) {
-    }
-
-    rpc AddChannelVideo (AddChannelVideoRequest) returns (AddChannelVideoResponse) {
-    }
-
-    rpc ListChannelVideos (ListChannelVideosRequest) returns (ListChannelVideosResponse) {
-    }
-
-    rpc UpdateChannel (UpdateChannelRequest) returns (UpdateChannelResponse) {
-    }
-
-    rpc PatchChannel (PatchChannelRequest) returns (PatchChannelResponse) {
-    }
-
-    rpc DeleteChannel (DeleteChannelRequest) returns (DeleteChannelResponse) {
-    }
-
-    rpc ListUserSubscriptions (ListUserSubscriptionsRequest) returns (ListUserSubscriptionsResponse) {
-    }
-
-    rpc ReplaceUserSubscriptions (ReplaceUserSubscriptionsRequest) returns (ReplaceUserSubscriptionsResponse) {
-    }
-
-    rpc SearchChannels (SearchChannelsRequest) returns (SearchChannelsResponse) {
-    }
-
-    rpc ListUncategorizedSubscriptions (ListUncategorizedSubscriptionsRequest) returns (ListUncategorizedSubscriptionsResponse){
-    }
+  rpc ListUserSubscriptions (ListUserSubscriptionsRequest) returns (ListUserSubscriptionsResponse);
+  rpc ReplaceUserSubscriptions (ReplaceUserSubscriptionsRequest) returns (ReplaceUserSubscriptionsResponse);
 }

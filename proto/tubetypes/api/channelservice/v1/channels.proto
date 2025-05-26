@@ -1,0 +1,116 @@
+syntax = "proto3";
+
+package tubetypes.api.channelservice.v1;
+
+import "google/protobuf/field_mask.proto";
+
+import "tubetypes/api/channel/v1/message.proto";
+
+// Identifier message to wrap channel identification fields used in multiple requests.
+message ChannelIdentifier {
+    oneof identifier {
+        string channel_id = 1;  // Unique identifier for the channel.
+        string youtube_id = 2;  // YouTube-specific channel ID.
+        string username = 3;    // Username associated with the channel.
+    }
+}
+
+message ChannelFilter {
+    // If set, filters channels by category ID.
+    optional string category_id = 1;
+
+    optional bool is_stale = 2;
+}
+
+message ListChannelOptions {
+    ChannelFilter filter = 1;
+
+    // If true, also includes channels from subcategories of the given category.
+    bool include_subcategories = 2;
+}
+
+message CreateChannelRequest {
+    // The channel to be created.
+    tubetypes.api.channel.v1.Channel channel = 1;
+}
+
+message CreateChannelResponse {
+    // The created channel with its assigned identifiers.
+    tubetypes.api.channel.v1.Channel channel = 1;
+}
+
+message ListChannelsRequest {
+    // Maximum number of channels to return in the response.
+    int32 page_size = 1;
+    // Token to retrieve the next page of results.
+    string page_token = 2;
+    ListChannelOptions options = 3;
+}
+
+message ListChannelsResponse {
+    // Token to retrieve the next page of results.
+    string next_page_token = 1;
+    // List of channels returned in this response.
+    repeated tubetypes.api.channel.v1.Channel channels = 2;
+    // Total number of channels available.
+    int64 total_items = 3;
+}
+
+message DescribeChannelRequest {
+    // Identifier to specify which channel to describe.
+    ChannelIdentifier identifier = 1;
+}
+
+message DescribeChannelResponse {
+    // The detailed information of the requested channel.
+    tubetypes.api.channel.v1.Channel channel = 1;
+}
+
+message PatchChannelRequest {
+    // Channel object containing fields to update.
+    tubetypes.api.channel.v1.Channel channel = 1;
+    // FieldMask specifying which fields in the channel should be updated.
+    google.protobuf.FieldMask update_mask = 2;
+}
+
+message PatchChannelResponse {
+    // The updated channel after applying the patch.
+    tubetypes.api.channel.v1.Channel channel = 1;
+}
+
+message UpdateChannelRequest {
+    // Channel object with updated information to replace the existing channel.
+    tubetypes.api.channel.v1.Channel channel = 1;
+}
+
+message UpdateChannelResponse {
+    // The updated channel after replacement.
+    tubetypes.api.channel.v1.Channel channel = 1;
+}
+
+message DeleteChannelRequest {
+    // ID of the channel to delete.
+    string channel_id = 1;
+}
+
+message DeleteChannelResponse {
+    // Empty response indicating successful deletion.
+}
+
+message SearchChannelsRequest {
+    // Maximum number of channels to return.
+    int32 page_size = 1;
+    // Token to retrieve the next page of results.
+    string page_token = 2;
+    // Query string to search channels by name or description.
+    string query = 3;
+}
+
+message SearchChannelsResponse {
+    // Token to retrieve the next page of results.
+    string next_page_token = 1;
+    // List of channels matching the search query.
+    repeated tubetypes.api.channel.v1.Channel channels = 2;
+    // Total number of matching channels.
+    int64 total_items = 3;
+}

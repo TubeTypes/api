@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package tubetypes.api.channelservice.v1;
+
+import "tubetypes/api/channel/v1/message.proto";
+
+message SubscriptionFilter {
+    // If true, only return subscriptions that have not been categorized.
+    // Defaults to false.
+    bool only_uncategorized = 1;
+}
+
+
+message ListUserSubscriptionsRequest {
+    // Maximum number of subscriptions to return.
+    int32 page_size = 1;
+
+    // Token to retrieve the next page of results.
+    string page_token = 2;
+
+    // ID of the user whose subscriptions are being listed.
+    string user_id = 3;
+
+    // Optional filtering criteria.
+    SubscriptionFilter filter = 4;
+}
+
+message ListUserSubscriptionsResponse {
+    // Token to retrieve the next page of results.
+    string next_page_token = 1;
+
+    // List of channels returned in this response.
+    repeated tubetypes.api.channel.v1.Channel channels = 2;
+
+    // Total number of channels available.
+    int64 total_items = 3;
+}
+
+message ReplaceUserSubscriptionsRequest {
+    // ID of the user whose subscriptions are to be replaced.
+    string user_id = 1;
+    // New set of subscriptions to replace the existing ones.
+    repeated tubetypes.api.channel.v1.Subscription subscriptions = 2;
+}
+
+message ReplaceUserSubscriptionsResponse {
+    // The updated list of subscriptions after replacement.
+    repeated tubetypes.api.channel.v1.Subscription subscriptions = 1;
+}
