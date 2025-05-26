@@ -20,13 +20,13 @@ message ChannelFilter {
     optional string category_id = 1;
 
     optional bool is_stale = 2;
+
+    // If true, also includes channels from subcategories of the given category.
+    bool include_subcategories = 3;
 }
 
 message ListChannelOptions {
     ChannelFilter filter = 1;
-
-    // If true, also includes channels from subcategories of the given category.
-    bool include_subcategories = 2;
 }
 
 message CreateChannelRequest {
