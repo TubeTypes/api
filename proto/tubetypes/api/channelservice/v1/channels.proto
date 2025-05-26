@@ -62,7 +62,7 @@ message ListChannelsResponse {
 
 message DescribeChannelRequest {
     // Identifier to specify which channel to describe.
-    ChannelIdentifier identifier = 1;
+    ChannelIdentifier channel = 1;
 }
 
 message DescribeChannelResponse {
