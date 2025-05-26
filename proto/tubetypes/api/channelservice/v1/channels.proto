@@ -19,10 +19,14 @@ message ChannelFilter {
     // If set, filters channels by category ID.
     optional string category_id = 1;
 
+    // Only include channels that are marked as stale by the service.
     optional bool is_stale = 2;
 
     // If true, also includes channels from subcategories of the given category.
     bool include_subcategories = 3;
+
+    // Resolved category IDs to filter by. If present, this field overrides `category_id`.
+    repeated string category_ids = 4;
 }
 
 message ListChannelOptions {
