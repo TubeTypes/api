@@ -10,10 +10,10 @@ service CategorisationService {
     rpc GetUserStatistics(GetUserStatisticsRequest) returns (GetUserStatisticsResponse){
     }
 
-    rpc ListPendingAffirmativeVotes(ListPendingAffirmativeVotesRequest) returns (ListPendingAffirmativeVotesResponse) {
+    rpc ListAffirmativeVotes(ListAffirmativeVotesRequest) returns (ListAffirmativeVotesResponse) {
     }
 
-    rpc ListPendingNoCategoryVotes(ListPendingNoCategoryVotesRequest) returns (ListPendingNoCategoryVotesResponse) {
+    rpc ListNoCategoryVotes(ListNoCategoryVotesRequest) returns (ListNoCategoryVotesResponse) {
     }
 
     rpc GetNextCategorization(GetNextCategorizationRequest) returns (GetNextCategorizationResponse) {
@@ -35,8 +35,5 @@ service CategorisationService {
     }
 
     rpc ListAISuggestedNoCategoryVotes(ListAISuggestedNoCategoryVotesRequest) returns (ListAISuggestedNoCategoryVotesResponse) {
-    }
-
-    rpc ListAISuggestedAffirmativeVotesByChannelID(ListAISuggestedAffirmativeVotesByChannelIDRequest) returns (ListAISuggestedAffirmativeVotesByChannelIDResponse) {
     }
 }

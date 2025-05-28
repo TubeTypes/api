@@ -13,23 +13,34 @@ message GetUserStatisticsResponse {
     int32 total_no_category_votes = 2;
 }
 
-message ListPendingAffirmativeVotesRequest {
-    int32 page_size = 1;
-    string page_token = 2;
+message VoteFilter {
+    // Return only votes that haven't been consolidated.
+    optional bool is_pending = 1;
 }
 
-message ListPendingAffirmativeVotesResponse {
+message ListVotesOptions {
+    VoteFilter filter = 1;
+}
+
+message ListAffirmativeVotesRequest {
+    int32 page_size = 1;
+    string page_token = 2;
+    ListVotesOptions options = 3;
+}
+
+message ListAffirmativeVotesResponse {
     tubetypes.api.categorisation.v1.AffirmativeVoteList pending_votes = 1;
     string next_page_token = 2;
     int64 total_items = 3;
 }
 
-message ListPendingNoCategoryVotesRequest {
+message ListNoCategoryVotesRequest {
     int32 page_size = 1;
     string page_token = 2;
+    ListVotesOptions options = 3;
 }
 
-message ListPendingNoCategoryVotesResponse {
+message ListNoCategoryVotesResponse {
     tubetypes.api.categorisation.v1.NoCategoryVoteList pending_votes = 1;
     string next_page_token = 2;
     int64 total_items = 3;
@@ -73,9 +84,19 @@ message ApproveAffirmativeVoteRequest {
 
 message ApproveAffirmativeVoteResponse {}
 
+message AISuggestedVoteFilter {
+    // Filter to votes only for a specific channel ID.
+    optional string channel_id = 1;
+}
+
+message ListAISuggestedVotesOptions {
+    AISuggestedVoteFilter filter = 1;
+}
+
 message ListAISuggestedAffirmativeVotesRequest {
     int32 page_size = 1;
     string page_token = 2;
+    ListAISuggestedVotesOptions options = 3;
 }
 
 message ListAISuggestedAffirmativeVotesResponse {
@@ -87,22 +108,11 @@ message ListAISuggestedAffirmativeVotesResponse {
 message ListAISuggestedNoCategoryVotesRequest {
     int32 page_size = 1;
     string page_token = 2;
+    ListAISuggestedVotesOptions options = 3;
 }
 
 message ListAISuggestedNoCategoryVotesResponse {
     string next_page_token = 1;
     repeated tubetypes.api.categorisation.v1.AISuggestedNoCategoryVote votes = 2;
-    int64 total_items = 3;
-}
-
-message ListAISuggestedAffirmativeVotesByChannelIDRequest {
-    int32 page_size = 1;
-    string page_token = 2;
-    string channel_id = 3;
-}
-
-message ListAISuggestedAffirmativeVotesByChannelIDResponse {
-    string next_page_token = 1;
-    repeated tubetypes.api.categorisation.v1.AISuggestedAffirmativeVote votes = 2;
     int64 total_items = 3;
 }
