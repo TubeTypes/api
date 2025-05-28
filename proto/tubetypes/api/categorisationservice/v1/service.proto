@@ -7,35 +7,20 @@ import "tubetypes/api/categorisationservice/v1/request_response.proto";
 // CategorisationService API defines how TubeTypes requests categorisation
 // information.
 service CategorisationService {
-    rpc GetUserStatistics(GetUserStatisticsRequest) returns (GetUserStatisticsResponse){
-    }
+    rpc GetUserStatistics(GetUserStatisticsRequest) returns (GetUserStatisticsResponse);
 
-    rpc ListAffirmativeVotes(ListAffirmativeVotesRequest) returns (ListAffirmativeVotesResponse) {
-    }
-
-    rpc ListNoCategoryVotes(ListNoCategoryVotesRequest) returns (ListNoCategoryVotesResponse) {
-    }
+    rpc ListAffirmativeVotes(ListAffirmativeVotesRequest) returns (ListAffirmativeVotesResponse);
+    rpc ListNoCategoryVotes(ListNoCategoryVotesRequest) returns (ListNoCategoryVotesResponse);
 
     rpc DescribeCategorizationSession(DescribeCategorizationSessionRequest) returns (DescribeCategorizationSessionResponse);
+    rpc GetNextCategorization(GetNextCategorizationRequest) returns (GetNextCategorizationResponse);
 
-    rpc GetNextCategorization(GetNextCategorizationRequest) returns (GetNextCategorizationResponse) {
-    }
+    rpc SubmitAffirmativeVote(SubmitAffirmativeVoteRequest) returns (SubmitAffirmativeVoteResponse);
+    rpc SubmitNoCategoryVote(SubmitNoCategoryVoteRequest) returns (SubmitNoCategoryVoteResponse);
+    rpc SkipCategorization(SkipCategorizationRequest) returns (SkipCategorizationResponse);
 
-    rpc SubmitAffirmativeVote(SubmitAffirmativeVoteRequest) returns (SubmitAffirmativeVoteResponse) {
-    }
+    rpc ApproveAffirmativeVote(ApproveAffirmativeVoteRequest) returns (ApproveAffirmativeVoteResponse);
 
-    rpc SubmitNoCategoryVote(SubmitNoCategoryVoteRequest) returns (SubmitNoCategoryVoteResponse) {
-    }
-
-    rpc SkipCategorization(SkipCategorizationRequest) returns (SkipCategorizationResponse) {
-    }
-
-    rpc ApproveAffirmativeVote(ApproveAffirmativeVoteRequest) returns (ApproveAffirmativeVoteResponse) {
-    }
-
-    rpc ListAISuggestedAffirmativeVotes(ListAISuggestedAffirmativeVotesRequest) returns (ListAISuggestedAffirmativeVotesResponse) {
-    }
-
-    rpc ListAISuggestedNoCategoryVotes(ListAISuggestedNoCategoryVotesRequest) returns (ListAISuggestedNoCategoryVotesResponse) {
-    }
+    rpc ListAISuggestedAffirmativeVotes(ListAISuggestedAffirmativeVotesRequest) returns (ListAISuggestedAffirmativeVotesResponse);
+    rpc ListAISuggestedNoCategoryVotes(ListAISuggestedNoCategoryVotesRequest) returns (ListAISuggestedNoCategoryVotesResponse);
 }

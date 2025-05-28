@@ -7,9 +7,6 @@ import "tubetypes/api/statisticsservice/v1/request_response.proto";
 // StatisticsService API defines how TubeTypes requests information about
 // any user or channel data.
 service StatisticsService {
-    rpc GetUserStatistics(GetUserStatisticsRequest) returns (GetUserStatisticsResponse){
-    }
-
-    rpc GetGlobalStatistics(GetGlobalStatisticsRequest) returns (GetGlobalStatisticsResponse){
-    }
+    rpc GetUserStatistics(GetUserStatisticsRequest) returns (GetUserStatisticsResponse);
+    rpc GetGlobalStatistics(GetGlobalStatisticsRequest) returns (GetGlobalStatisticsResponse);
 }

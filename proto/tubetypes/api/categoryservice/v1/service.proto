@@ -6,22 +6,10 @@ import "tubetypes/api/categoryservice/v1/request_response.proto";
 
 // CategoryService API defines how TubeTypes interacts with the categories
 service CategoryService {
-
-    rpc CreateCategory(CreateCategoryRequest) returns (CreateCategoryResponse) {
-    }
-
-    rpc DescribeCategory(DescribeCategoryRequest) returns (DescribeCategoryResponse) {
-    }
-
-    rpc ListCategories (ListCategoriesRequest) returns (ListCategoriesResponse) {
-    }
-
-    rpc UpdateCategory(UpdateCategoryRequest) returns (UpdateCategoryResponse) {
-    }
-
-    rpc PatchCategory(PatchCategoryRequest) returns (PatchCategoryResponse) {
-    }
-
-    rpc SearchCategories (SearchCategoriesRequest) returns (SearchCategoriesResponse) {
-    }
+    rpc CreateCategory(CreateCategoryRequest) returns (CreateCategoryResponse);
+    rpc DescribeCategory(DescribeCategoryRequest) returns (DescribeCategoryResponse);
+    rpc UpdateCategory(UpdateCategoryRequest) returns (UpdateCategoryResponse);
+    rpc PatchCategory(PatchCategoryRequest) returns (PatchCategoryResponse);
+    rpc ListCategories (ListCategoriesRequest) returns (ListCategoriesResponse);
+    rpc SearchCategories (SearchCategoriesRequest) returns (SearchCategoriesResponse);
 }
