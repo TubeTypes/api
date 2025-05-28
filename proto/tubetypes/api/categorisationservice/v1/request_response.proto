@@ -46,8 +46,16 @@ message ListNoCategoryVotesResponse {
     int64 total_items = 3;
 }
 
+// Identifier message to wrap cateogry identification fields used in multiple requests.
+message CategorizationSessionIdentifier {
+    oneof identifier {
+        string session_id = 1;
+        string user_id = 2;
+    }
+}
+
 message DescribeCategorizationSessionRequest {
-    string user_id = 1;
+    CategorizationSessionIdentifier session = 1;
 }
 
 message DescribeCategorizationSessionResponse {
