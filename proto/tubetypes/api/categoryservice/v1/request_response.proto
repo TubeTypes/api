@@ -15,15 +15,15 @@ message CreateCategoryResponse {
 }
 
 message CategoryFilter {
-    // Randomize the order of the output.
-    optional bool randomize_order = 1;
-
     // Only return categories that have channels associated with it.
-    optional bool has_channels = 2;
+    optional bool has_channels = 1;
 }
 
 message ListCategoryOptions {
     CategoryFilter filter = 1;
+
+    // Randomize the order of the output.
+    optional bool randomize_order = 2;
 }
 
 message ListCategoriesRequest {
