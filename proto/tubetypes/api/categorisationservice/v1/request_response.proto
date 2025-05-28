@@ -47,7 +47,7 @@ message ListNoCategoryVotesResponse {
 }
 
 message GetNextCategorizationRequest {
-    string user_id = 1;
+    string session_id = 1;
 }
 
 message GetNextCategorizationResponse {
@@ -56,7 +56,7 @@ message GetNextCategorizationResponse {
 }
 
 message SubmitAffirmativeVoteRequest {
-    string user_id = 1;
+    string session_id = 1;
     string channel_id = 2;
     string category_id = 3;
 }
@@ -64,7 +64,7 @@ message SubmitAffirmativeVoteRequest {
 message SubmitAffirmativeVoteResponse {}
 
 message SubmitNoCategoryVoteRequest {
-    string user_id = 1;
+    string session_id = 1;
     string channel_id = 2;
     optional string suggestion = 3;
 }
@@ -72,8 +72,8 @@ message SubmitNoCategoryVoteRequest {
 message SubmitNoCategoryVoteResponse {}
 
 message SkipCategorizationRequest {
-    string channel_id = 1;
-    string user_id = 2;
+    string session_id = 1;
+    string channel_id = 2;
 }
 
 message SkipCategorizationResponse {}
