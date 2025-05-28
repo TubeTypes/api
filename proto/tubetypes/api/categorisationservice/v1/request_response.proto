@@ -46,6 +46,14 @@ message ListNoCategoryVotesResponse {
     int64 total_items = 3;
 }
 
+message DescribeCategorizationSessionRequest {
+    string user_id = 1;
+}
+
+message DescribeCategorizationSessionResponse {
+    tubetypes.api.categorisation.v1.CategorizationSession session = 1;
+}
+
 message GetNextCategorizationRequest {
     string session_id = 1;
 }
