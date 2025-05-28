@@ -12,6 +12,7 @@ service CategorisationService {
     rpc ListAffirmativeVotes(ListAffirmativeVotesRequest) returns (ListAffirmativeVotesResponse);
     rpc ListNoCategoryVotes(ListNoCategoryVotesRequest) returns (ListNoCategoryVotesResponse);
 
+    rpc StartCategorizationSession(StartCategorizationSessionRequest) returns (StartCategorizationSessionResponse);
     rpc DescribeCategorizationSession(DescribeCategorizationSessionRequest) returns (DescribeCategorizationSessionResponse);
     rpc GetNextCategorization(GetNextCategorizationRequest) returns (GetNextCategorizationResponse);
 

@@ -46,6 +46,14 @@ message ListNoCategoryVotesResponse {
     int64 total_items = 3;
 }
 
+message StartCategorizationSessionRequest {
+    string user_id = 1;
+}
+
+message StartCategorizationSessionResponse {
+    tubetypes.api.categorisation.v1.CategorizationSession session = 1;
+}
+
 // Identifier message to wrap cateogry identification fields used in multiple requests.
 message CategorizationSessionIdentifier {
     oneof identifier {
