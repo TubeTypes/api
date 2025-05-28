@@ -13,13 +13,7 @@ service CategoryService {
     rpc DescribeCategory(DescribeCategoryRequest) returns (DescribeCategoryResponse) {
     }
 
-    rpc DescribeCategoryByName(DescribeCategoryByNameRequest) returns (DescribeCategoryByNameResponse) {
-    }
-
     rpc ListCategories (ListCategoriesRequest) returns (ListCategoriesResponse) {
-    }
-
-    rpc ListRandomCategories (ListRandomCategoriesRequest) returns (ListRandomCategoriesResponse) {
     }
 
     rpc UpdateCategory(UpdateCategoryRequest) returns (UpdateCategoryResponse) {

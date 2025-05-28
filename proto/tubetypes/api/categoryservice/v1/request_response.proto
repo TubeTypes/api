@@ -14,9 +14,19 @@ message CreateCategoryResponse {
     tubetypes.api.category.v1.Category category = 1;
 }
 
+message CategoryFilter {
+    // Randomize the order of the output.
+    optional bool randomize_order = 1;
+}
+
+message ListCategoryOptions {
+    CategoryFilter filter = 1;
+}
+
 message ListCategoriesRequest {
     int32 page_size = 1;
     string page_token = 2;
+    ListCategoryOptions options = 3;
 }
 
 message ListCategoriesResponse {
@@ -25,30 +35,19 @@ message ListCategoriesResponse {
     int64 total_items = 3;
 }
 
-message ListRandomCategoriesRequest {
-    int32 page_size = 1;
-    string page_token = 2;
-    bool has_channels = 3;
-}
-
-message ListRandomCategoriesResponse {
-    repeated tubetypes.api.category.v1.Category categories = 1;
-    string next_page_token = 2;
+// Identifier message to wrap cateogry identification fields used in multiple requests.
+message CategoryIdentifier {
+    oneof identifier {
+        string category_id = 1;  // Unique identifier for the channel.
+        string name = 2; // Unique name for the channel.
+    }
 }
 
 message DescribeCategoryRequest {
-    string category_id = 1;
+    CategoryIdentifier category = 1;
 }
 
 message DescribeCategoryResponse {
-    tubetypes.api.category.v1.Category category = 1;
-}
-
-message DescribeCategoryByNameRequest {
-    string name = 1;
-}
-
-message DescribeCategoryByNameResponse {
     tubetypes.api.category.v1.Category category = 1;
 }
 
