@@ -18,9 +18,3 @@ plugins:
     opt:
       - paths=source_relative
     strategy: directory
-  - name: gorm
-    out: gen/go
-    opt:
-      - paths=source_relative
-      - engine=postgres
-      - enums=string

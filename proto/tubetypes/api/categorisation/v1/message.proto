@@ -2,32 +2,28 @@ syntax = "proto3";
 
 package tubetypes.api.categorisation.v1;
 
-import "protoc-gen-gorm/options/gorm.proto";
 import "google/protobuf/wrappers.proto";
 import "google/protobuf/timestamp.proto";
 
 message AffirmativeVote {
-    option (gorm.opts).ormable = true;
-    string id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "gen_random_uuid()"}];
-    string channel_id = 2 [(gorm.field).tag = {unique_index: "unique_account_channel"}];
+    string id = 1;
+    string channel_id = 2;
     string category_id = 3;
-    string user_id = 4 [(gorm.field).tag = {index: "affirmative_account", unique_index: "unique_account_channel"}];
+    string user_id = 4;
     google.protobuf.Timestamp created_at = 5;
     google.protobuf.Timestamp consolidated_at = 6;
 }
 
 message NoCategoryVote {
-    option (gorm.opts).ormable = true;
-    string id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "gen_random_uuid()"}];
+    string id = 1;
     string channel_id = 2;
-    string user_id = 3 [(gorm.field).tag = {index: "no_category_account"}];
+    string user_id = 3;
     google.protobuf.StringValue suggestion = 4;
     google.protobuf.Timestamp created_at = 5;
 }
 
 message AISuggestedAffirmativeVote {
-    option (gorm.opts).ormable = true;
-    string id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "gen_random_uuid()"}];
+    string id = 1;
     string channel_id = 2;
     string task_id = 3;
     string suggested_category_id = 4;
@@ -37,8 +33,7 @@ message AISuggestedAffirmativeVote {
 }
 
 message AISuggestedNoCategoryVote {
-    option (gorm.opts).ormable = true;
-    string id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "gen_random_uuid()"}];
+    string id = 1;
     string channel_id = 2;
     string task_id = 3;
     string suggested_name = 4;
@@ -56,8 +51,7 @@ enum AISuggestionScrapeState {
 }
 
 message AISuggestionScrapeTask {
-    option (gorm.opts).ormable = true;
-    string id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "gen_random_uuid()"}];
+    string id = 1;
     string channel_id = 2;
     AISuggestionScrapeState state = 3;
     google.protobuf.Timestamp created_at = 4;
@@ -73,17 +67,15 @@ message NoCategoryVoteList {
 }
 
 message CategorizationSession {
-    option (gorm.opts).ormable = true;
-    string id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "gen_random_uuid()"}];
-    string user_id = 2 [(gorm.field).tag = {unique_index: "unique_session_user"}];
+    string id = 1;
+    string user_id = 2;
     google.protobuf.Timestamp created_at = 3;
     google.protobuf.Timestamp expires_at = 4;
 }
 
 message CategorizationSessionChannel {
-    option (gorm.opts).ormable = true;
-    string id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "gen_random_uuid()"}];
-    CategorizationSession session = 2 [(gorm.field).belongs_to = {}];
+    string id = 1;
+    CategorizationSession session = 2;
     string channel_id = 3;
     google.protobuf.Timestamp created_at = 4;
 }
