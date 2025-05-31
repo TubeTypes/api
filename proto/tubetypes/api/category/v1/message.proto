@@ -2,18 +2,16 @@ syntax = "proto3";
 
 package tubetypes.api.category.v1;
 
-import "protoc-gen-gorm/options/gorm.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/wrappers.proto";
 
 message Category {
-    option (gorm.opts).ormable = true;
-    string id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "gen_random_uuid()"}];
-    string name = 2  [(gorm.field).tag = {unique: true}];
+    string id = 1;
+    string name = 2;
     string display_name = 3;
     string path = 4;
     google.protobuf.Timestamp created_at = 5;
     google.protobuf.Timestamp updated_at = 6;
     google.protobuf.Timestamp deleted_at = 7;
-    google.protobuf.Int32Value youtube_category = 8 [(gorm.field).tag = {unique: true}];
+    google.protobuf.Int32Value youtube_category = 8;
 }

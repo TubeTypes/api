@@ -2,27 +2,24 @@ syntax = "proto3";
 
 package tubetypes.api.statistics.v1;
 
-import "protoc-gen-gorm/options/gorm.proto";
 import "google/protobuf/timestamp.proto";
 
 import "tubetypes/api/category/v1/message.proto";
 
 message UserStatistics {
-    option (gorm.opts).ormable = true;
-    string user_id = 1 [(gorm.field).tag = {primary_key: true}];
+    string user_id = 1;
     google.protobuf.Timestamp created_at = 2;
     google.protobuf.Timestamp updated_at = 3;
     google.protobuf.Timestamp deleted_at = 4;
 
-    tubetypes.api.category.v1.Category most_subscribed_category = 5  [(gorm.field).belongs_to = {}];
-    tubetypes.api.category.v1.Category most_recently_subscribed_category = 6  [(gorm.field).belongs_to = {}];
+    tubetypes.api.category.v1.Category most_subscribed_category = 5;
+    tubetypes.api.category.v1.Category most_recently_subscribed_category = 6;
     int32 total_distinct_categories = 7;
 }
 
 message GlobalStatistics {
-    option (gorm.opts).ormable = true;
     google.protobuf.Timestamp created_at = 1;
 
-    tubetypes.api.category.v1.Category newest_category = 2  [(gorm.field).belongs_to = {}];
-    tubetypes.api.category.v1.Category hottest_category = 3  [(gorm.field).belongs_to = {}];
+    tubetypes.api.category.v1.Category newest_category = 2;
+    tubetypes.api.category.v1.Category hottest_category = 3;
 }
