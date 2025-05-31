@@ -80,17 +80,17 @@ message GetNextCategorizationResponse {
 }
 
 message SubmitAffirmativeVoteRequest {
-    string session_id = 1;
-    string channel_id = 2;
-    string category_id = 3;
+    string channel_id = 1;
+    string category_id = 2;
+    optional string session_id = 3;
 }
 
 message SubmitAffirmativeVoteResponse {}
 
 message SubmitNoCategoryVoteRequest {
-    string session_id = 1;
-    string channel_id = 2;
-    optional string suggestion = 3;
+    string channel_id = 1;
+    optional string suggestion = 2;
+    optional string session_id = 3;
 }
 
 message SubmitNoCategoryVoteResponse {}
