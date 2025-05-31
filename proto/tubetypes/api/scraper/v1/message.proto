@@ -3,7 +3,6 @@ syntax = "proto3";
 package tubetypes.api.scraper.v1;
 
 import "google/protobuf/timestamp.proto";
-import "protoc-gen-gorm/options/gorm.proto";
 
 enum ScrapeState {
     SCRAPE_STATE_UNSPECIFIED = 0;
@@ -13,8 +12,7 @@ enum ScrapeState {
 }
 
 message UserScrapeTask {
-    option (gorm.opts).ormable = true;
-    string id = 1 [(gorm.field).tag = {type: "uuid" primary_key: true default: "gen_random_uuid()"}];
+    string id = 1;
     string user_id = 2;
     google.protobuf.Timestamp created_at = 3;
     google.protobuf.Timestamp finished_at = 4;
@@ -28,9 +26,8 @@ enum ChannelScrapeResult {
 }
 
 message ChannelScrapeTask {
-    option (gorm.opts).ormable = true;
-    string channel_username = 1 [(gorm.field).tag = {primary_key: true}];
-    string channel_youtube_id = 2  [(gorm.field).tag = {unique_index: "unique_youtube_id"}];
+    string channel_username = 1;
+    string channel_youtube_id = 2;
     ChannelScrapeResult result = 3;
     google.protobuf.Timestamp created_at = 4;
 }
