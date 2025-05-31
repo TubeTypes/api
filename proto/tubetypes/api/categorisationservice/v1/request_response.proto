@@ -82,7 +82,8 @@ message GetNextCategorizationResponse {
 message SubmitAffirmativeVoteRequest {
     string channel_id = 1;
     string category_id = 2;
-    optional string session_id = 3;
+    string user_id = 3;
+    optional string session_id = 4;
 }
 
 message SubmitAffirmativeVoteResponse {}
@@ -90,7 +91,8 @@ message SubmitAffirmativeVoteResponse {}
 message SubmitNoCategoryVoteRequest {
     string channel_id = 1;
     optional string suggestion = 2;
-    optional string session_id = 3;
+    string user_id = 3;
+    optional string session_id = 4;
 }
 
 message SubmitNoCategoryVoteResponse {}
